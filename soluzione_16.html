@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 16</h1>
+ <h2>Testo</h2>  
+
+ Consideriamo una ipersuperficie cubica $X \subset \PP^4$, i.e. $X=V(f)$, con $f$ omogenea di grado 3. 
+ <p></p>
+ Supponiamo che $\Pi \subset X$, con $\Pi \cong \PP^2$. Dopo aver dimostrato che, sotto tali ipotesi, $X$ deve essere singolare, determinare il grado del luogo singolare di $X$.
+
+
+ <h2>Soluzione: 4 </h2>  
+ 
+
+Ci sono molti modi per determinare che una cubica 3-fold che contiene un piano debba essere singolare. Il più veloce è sicuramente usare il teorema della sezione iperpiana di Lefschetz. Per questo teorema il gruppo di Picard di una cubica 3-fold è generato dalla classe iperpiana, che in questo caso è una superficie cubica liscia, dunque irriducibile di grado 3. Ovviamente questo conto si può svolgere anche a mano, in un modo che aiuti la risposta a questo esercizio.
+<p></p>
+A meno di cambiare coordinate, prendiamo come equazioni del piano $x_0=x_1=0$. Se chiediamo che $\Pi \subset X$, allora $f$ sarà della forma:
+\[
+f=x_0Q_0+x_1Q_1
+\]
+con $Q_0, Q_1$ polinomi omogenei di grado 2 generici. Andiamo ora a calcolare il luogo singolare di $X$, ovvero l'annullarsi simultaneo di tutte le $\frac{\partial f}{\partial x_i}$.
+Abbiamo dunque
+\[
+\left( Q_0 + x_0\frac{\partial Q_0}{\partial x_0} +x_1\frac{\partial Q_1}{\partial x_0}, Q_1 + x_1\frac{\partial Q_1}{\partial x_1}+ x_0\frac{\partial Q_0}{\partial x_1}, x_0 \frac{\partial Q_0}{\partial x_2}+x_1 \frac{\partial Q_1}{\partial x_2}, x_0 \frac{\partial Q_0}{\partial x_3}+x_1 \frac{\partial Q_1}{\partial x_3} , x_0 \frac{\partial Q_0}{\partial x_4}+x_1 \frac{\partial Q_1}{\partial x_4}\right)
+\]
+
+Andiamo per prima cosa a calcolare il luogo singolare dentro $\Pi$. Questo è dato semplicemente da $S_{\Pi}=V(x_0, x_1, Q_0, Q_1)$, ovvero dall'intersezione di due quadriche in $\Pi$, ovvero 4 punti in generale.
+<p></p>
+D'altra parte, fuori da $\Pi$, almeno una tra $x_0$ e $x_1$ è diversa da zero. Consideriamo il caso in cui $x_0=0$, $x_1 \neq 0$. Si ha allora l'annullarsi di $Q_1$ e di tutte le sue derivate parziali, cosa che non può accadere per genericità di $Q_1$, e similmente per $Q_0$. Ne segue che tutte le singolarità di $X$ sono in $\Pi$, e dunque il grado del luogo singolare è proprio 4.
+
+
+
+
+
+    <div class="link-container">
+        <a href="problema_16.html" class="solution-link">🔙 Torna al giorno 16</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>s

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 20</h1>
+ <h2>Testo</h2>  
+   
+ Sia $V_6$ uno spazio vettoriale su $\CC$ di dimensione 6 con base fissata $v_1, \ldots, v_6$. Consideriamo una forma simplettica $\omega$, ovvero una forma bilineare anti-simmetrica non degenere. Ricordiamo che un sottospazio $U \subset V_6$ si dice \emph{isotropo} per $\omega$ se $\omega(u_1, u_2)=0$ per ogni $u_1, u_2 \in U$.
+ <p></p>
+ Consideriamo adesso $\Lambda$, lo spazio delle forme bilineari antisimmetriche su $V_6$, e $W_k \subset \Lambda$ un sottospazio di dimensione $k$. Sia inoltre $A_k$
+ definito come
+ \[
+ A_k:= \{ U \subset V_6 \ | \ \dim U=2,\ U \textrm{ isotropo per tutti gli } \omega \in W_k \},
+ \]
+ per $W_k$ generico.
+ <p></p>
+ Determinare:
+ <p></p>
+ &emsp; 1- il minimo $k$ per cui $A_k$ è un insieme finito;
+
+ <p></p>
+
+ &emsp; 2- fissato tale $k$, determinare $|A_k|$.
+
+ <p></p>
+
+
+
+ Per la soluzione, moltiplicare dunque:
+ \[
+ S=k|A_k|.
+ \]
+ 
+ 
+
+
+ <h2>Soluzione: 112 </h2>  
+ 
+
+
+Facciamo prima un esempio. Se rispetto base fissata $\omega$ è rappresentata dalla matrice
+\[
+\begin{pmatrix}
+    0 &1 &0&0&0&0 \\
+    -1 &0 &0&0&0&0 \\
+    0&0&0 &1&0&0\\
+    0&0&-1&0&0&0 \\
+    0&0&0&0&0&1\\
+    0&0&0&0&-1 &0
+\end{pmatrix}
+\]
+Allora $U=\textrm{Span}\{v_1, v_3\}$ sarà isotropo, mentre $U=\textrm{Span}\{v_1, v_2\}$ no.
+<p></p>
+$A$ è un sottoinsieme della Grassmanniana $\Gr(2,6)$, che possiamo considerare immersa tramite PlüScker nello spazio proiettivo $\PP(\W^2 V_6)$. In questa immersione, una forma bilineare $\omega \in \W^2 V_6^{\vee}$ corrisponde a un iperpiano.
+<p></p>
+Sotto questa interpretazione, possiamo considerare $A_k=\textrm{Ann}(W_k)$. Poiché $\dim \Gr(2,6)=2 \cdot 4=8$ abbiamo che $A_k$, per $W_k$ generico, sarà una sezione lineare di $\Gr(2,6)$ di dimensione $8-k$. Dunque $k=8$.
+<p></p> Per determinare la cardinalità di $A$ basterà allora andare a controllare il grado di $A$, che è dunque uguale al grado di $\Gr(2,n)$. Quest'ultimo è uguale al numero di Catalan
+\[
+\textrm{deg} \Gr(2,n)= \frac{(2n-4)!}{(n-1)!(n-2)!}
+\]
+che per $n=6$ è uguale a 14. Il numero cercato è dunque $14 \cdot 8=112$.
+
+
+
+
+    <div class="link-container">
+        <a href="problema_20.html" class="solution-link">🔙 Torna al giorno 20 </a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

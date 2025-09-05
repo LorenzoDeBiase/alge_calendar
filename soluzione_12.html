@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/math-env.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 12 </h1>
+ <h2>Testo</h2>  
+
+
+
+ Sia $\FF_{11} = \ZZ / 11 \ZZ$ il campo con $11$ elementi e sia $\overline{\FF_{11}}$ la sua chiusura algebrica.
+ Sia $E \subset \PP^2(\overline{\FF_{11}})$ la curva algebrica piana proiettiva definita dall'equazione
+     \[
+ x_0 x_2^2 - \left( x_1^3 + 2 x_0^2 x_1 + 2x_0^3  \right) = 0.
+ \]
+ Sia $\PP^2(\FF_{11})$, lo spazio proiettivo sul campo $\FF_{11}$: esso è un sottoinsieme di $\PP^2(\overline{\FF_{11}})$. Si ponga
+ \[
+ E(\FF_{11}) = E \cap \PP^2(\FF_{11}).
+ \]
+ In altre parole, $E(\FF_{11})$ è l'insieme dei punti di $E$ che possono avere tutte e tre le coordinate omogenee in $\FF_{11}$.
+ Si determini la cardinalità di $E(\FF_{11})$.
+
+
+
+ <h2>Soluzione: 9 </h2>  
+ 
+
+
+
+
+     
+     Si ha
+     \[
+     E(\FF_{11}) = \{ [x_0 : x_1 : x_2] \in \PP^2(\FF_{11}) \mid x_0 x_2^2 =  x_1^3 + 2 x_0^2 x_1 + 2x_0^3     \}.
+     \]
+     Il punto $[0:0:1]$ è l'unico punto di $E$ che non sta nella carta $U_0$. Quindi ci basta studiare quali sono i punti $\FF_{11}$-razionali della curva piana affine $E \cap U_0$. Si ha
+ \[
+ (E \cap U_0)(\FF_{11}) = \left\{ (x,y) \in (\FF_{11})^2 \mid y^2 = x^3 + 2x + 2   \right\}.
+ \]	
+ I residui quadratici modulo $11$ sono $0$, $1^2 = 1$, $2^2 = 4$, $3^2 = 9$, $4^2 = 5$ e $5^2 = 3$, cioè $0,1,3,4,5,9$.
+ 
+ 
+ La seguente tabella riporta i valori della funzione $\FF_{11} \to \FF_{11}$ data da $x \mapsto x^3 + 2x + 2$.
+ 
+ 
+ <table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>$x$</th>
+      <th>$x^3$</th>
+      <th>$2x$</th>
+      <th>$x^3 + 2x + 2$</th>
+    </tr>
+    <tr><td>$0$</td><td>$0$</td><td>$0$</td><td>$2$</td></tr>
+    <tr><td>$1$</td><td>$1$</td><td>$2$</td><td>$5$</td></tr>
+    <tr><td>$2$</td><td>$8$</td><td>$4$</td><td>$3$</td></tr>
+    <tr><td>$3$</td><td>$5$</td><td>$6$</td><td>$2$</td></tr>
+    <tr><td>$4$</td><td>$9$</td><td>$8$</td><td>$8$</td></tr>
+    <tr><td>$5$</td><td>$4$</td><td>$10$</td><td>$5$</td></tr>
+    <tr><td>$6$</td><td>$7$</td><td>$1$</td><td>$10$</td></tr>
+    <tr><td>$7$</td><td>$2$</td><td>$3$</td><td>$7$</td></tr>
+    <tr><td>$8$</td><td>$6$</td><td>$5$</td><td>$2$</td></tr>
+    <tr><td>$9$</td><td>$3$</td><td>$7$</td><td>$1$</td></tr>
+    <tr><td>$10$</td><td>$10$</td><td>$9$</td><td>$10$</td></tr>
+  </table>
+
+
+ Quindi gli $x \in \FF_{11}$ tali che $x^3 + 2x + 2$ è un quadrato in $\FF_{11}$ sono esattamente $1,2,5,9$.
+ Perciò
+     \[
+ (E \cap U_0)(\FF_{11}) = \left\{ (1,\pm 4), (2,\pm 5), (5, \pm4), (9,\pm 1)   \right\}.
+ \]
+ Quindi
+ \[
+     E (\FF_{11}) = \{ [0:0:1], [1:1:\pm 4], [1:2,\pm 5], [1:5:\pm4], [1:9:\pm 1]   \}
+ \]
+ Quindi $E(\FF_{11})$ ha $9$ elementi.
+
+
+<p></p>
+
+Proviamo a inquadrare la situazione piú teoricamente.
+
+<div class="theorem">
+<b>[Legge di gruppo sulle curve ellittiche]</b> <p></p>
+ Sia $k$ un campo, sia $F \in k[x_0,x_1,x_2]_3$ un polinomio omogeneo di grado $3$ e sia $E = \rV_\PP(F)  \subset \PP^2(\overline{k})$ la curva algebrica piana proiettiva definita da $F$.
+ Si fissi un punto $O \in \PP^2(k) \cap E$, cioè un punto della curva $E$ con coordinate in $k$, tale che $O$ sia un flesso per $E$.
+ <p></p>
+ Allora, per ogni estensione algebrica di $k$, cioè $\overline{k} \supseteq K \supseteq k$, l'insieme
+     \[
+     E(K) := \{ [x_0:x_1:x_2] \in \PP^2(K) \mid F(x_0,x_1,x_2) = 0  \}  = E \cap \PP^2(K)
+     \]
+     ha un'unica struttura di gruppo abeliano tale che
+     <p></p>
+     &emsp; 1-  $O$ è l'elmento neutro di $E(K)$,<p></p>
+     &emsp; 2- per ogni $P_1,P_2,P_3 \in E(K)$ a due a due distinti, si ha  $P_1 + P_2 + P_3 = O$ se e solo se $P_1,P_2,P_3$ stanno su una retta,<p></p>
+     &emsp; 3- per ogni $P_1, P_2 \in E(K)$ sono distinti, si ha $2 P_1 + P_2 = O$ se e solo se $P_2$ sta sulla retta tangente a $E$ in $P_1$,<p></p>
+     &emsp; 4 -per ogni $P \in E(K)$, si ha $3P = O$ se e solo se $P$ è un flesso per $E$.
+     <p></p>
+Inoltre questa struttura di gruppo abeliano è funtoriale in $K$, cioè se si hanno due campi $\overline{k} \supseteq L \supseteq K \supseteq k$ l'inclusione $E(K) \hookrightarrow E(L)$ è un omomorfismo di gruppi.
+</div>
+
+<div class="proof"> <b>[Idea della dimostrazione]</b> <p></p>
+L'esistenza della struttura di gruppo è complicata, in particolare la dimostrazione dell'associatività.
+Qui mostriamo solo l'unicità.
+<p></p>
+Siano $P, Q \in E(K)$. Vogliamo far vedere che c'è un'unica possibilit\`a per $P+Q \in E(K)$ che soddisfa le proprietà nell'enunciato.
+Consideriamo la retta
+\[
+\ell_{P,Q} = \begin{cases}
+ \text{retta che passa per $P$ e per $Q$} &\quad \text{ se } P \neq Q, \\
+ \text{retta tangente a $E$ in $P$} &\quad \text{ se } P = Q.
+\end{cases}
+\]
+Poiché $P$ e $Q$ hanno coordinate in $K$ e la curva $E$ ha coefficienti in $K$, anche la retta $\ell_{P,Q}$ ha coefficienti in $K$.
+Per il teorema di Bezout, poiché $E$ ha grado $3$, la retta $\ell_{P,Q}$ interseca $E$ in $3$ punti contati con molteplicità; $2$ di questi punti sono $P$ e $Q$. Chiamiamo $R$ il terzo punto, che può essere uguale a $P$ o a $Q$.
+Per calcolare l'intersezione tra $E$ e $\ell_{P,Q}$ si ottiene un polinomio a coefficienti in $K$ di grado $3$ in una variabile di cui abbiamo già due radici in $K$ (le radici che corrispondono a $P$ e $Q$), quindi anche la terza radice sta in $K$ (che corrisponde a $R$). Ciò implica che $R$ ha coordinate in $K$, cioè $R \in E(K)$.
+Quindi con l'associazione $(P,Q) \mapsto R$ abbiamo costruito una funzione
+\[
+\varphi \colon E(K) \times E(K) \longrightarrow E(K).
+\]
+
+
+
+Per le proprietà (2), (3), (4) (applicate a seconda se l'insieme $\{P,Q, \varphi(P,Q)\}$ abbia cardinalità $3$, $2$ o $1$), si ottiene che vale sempre $P + Q + \\varphi(P,Q) = O$ per ogni $P,Q \in E(K)$.
+Si ottiene che $P + \varphi(P,O) = O$, cioè $-P = \\varphi(P,O)$ per ogni $P \in E(K)$.
+Quindi $P+Q = - \varphi(P,Q) = \varphi( \varphi(P,Q), O  )$. 
+<div class="qed">∎</div>
+</div>
+
+
+Se sono soddisfatte le condizioni del teorema si dice che $(E,O)$ è una curva ellittica sul campo $k$.
+Una tipica situazione in cui ciò avviene è la seguente: $k$ è un campo di caratteristica $\neq 2$, $f \in k[x]$ è un polinomio di grado $3$ con $3$ radici distinte in $\overline{k}$ (per esempio, $f = x(x-1)(x-\lambda)$ con $\lambda \in k \setminus \{ 0, 1\}$, oppure $f = x^3 + ax+b$ con $a,b \in k$ tali che $4a^3 + 27 b^2 \neq 0$), $F$ è l'omogeneizzazione rispetto a $x_0$ del polinomio $y^2 - f(x)$, $E$ è la chiusura proiettiva della curva algebrica piana affine definita dall'equazione $y^2 = f(x)$, $O$ è l'unico punto all'infinito, cioè $[0:0:1]$.
+
+Si osservi che il teorema dice che una curva ellittica $(E,O)$ sul campo $k$ definisce un funtore dalla categoria delle estensioni algebriche di $k$ alla categoria dei gruppi abeliani.
+
+<p></p>
+
+La situazione del nostro esercizio dice che $(E,O)$ è una curva ellittica sul campo $\FF_{11}$. Quindi l'insieme $E(\FF_{11})$, che ha cardinalità $9$, ha la struttura di gruppo abeliano con elemento neutro $O = [0:0:1]$.
+<p></p>
+La somma tra due elementi si calcola come spiegato nello sketch della dimostrazione sopra.
+Per esempio, calcoliamo la somma di $P = [1:1:4]$ e $Q = [1:2:5]$. La retta $\ell_{P,Q}$ passante per $P$ e $Q$ ha equazione affine $y=x+3$. Ora determiniamo i punti di intersezione tra $E$ e $\ell_{P,Q}$: dobbiamo risolvere l'equazione $(x+3)^2 = x^3 + 2x +2$, ovvero $0 = x^3 + 10 x^2 + 7 x + 4  = (x-1)(x-2)(x-9)$. Quindi il terzo punto di intersezione $\varphi(P,Q)$ ha coordinate affini $(9,1)$, cioè è $[1:9:1]$. Si può verificare che $E(\FF_{11})$ è un gruppo ciclico di ordine $9$.
+
+<p></p>
+
+In generale, è interessantissimo studiare il gruppo abeliano finito $E(\FF_q)$, quando $\FF_q$ è il campo con $q$ elementi e $(E,O)$ è una curva ellittica su $\FF_q$. Questi gruppi abeliani finiti sono alla base di importantissimi metodi di crittografia.
+
+Un'altra cosa interessantissima da studiare è la seguente: se $(E,O)$ è una curva ellittica su $\FF_q$, come varia il gruppo abeliano finito $E(\FF_{q^m})$ al variare di $m \geq 1$?
+
+<p></p>
+Concludiamo con l'enunciato di un risultato classico:
+
+<div class="theorem"> <b>[Bound di Hasse]</b> <p></p>
+ Sia $\FF_q$ il campo con $q$ elementi e sia $E$ una curva ellittica su $\FF_q$. Sia $E(\FF_q)$ l'insieme dei punti di $E$ con coordinate in $\FF_q$.
+ Allora
+ \[
+ | \# E(\FF_q) - (q+1) | \leq 2 \sqrt{q}.
+ \]
+</div>
+    <div class="link-container">
+        <a href="problema_12.html" class="solution-link">🔙 Torna al giorno 12</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 10</h1>
+ <h2>Testo</h2>  
+
+ È ben noto che per due punti passi una sola retta, sia nel piano affine $\A^2$ che sul piano proiettivo $\PP^2$ (entrambi su $\CC$). Equivalentemente, per tre punti non passa alcuna retta, a meno che questi non siano allineati.
+ <p></p>
+ Allo stesso modo, è ben noto che per cinque punti in $\PP^2$ <em>in posizione generale</em> (ovvero, nessun sottoinsieme di tre punti sia collineare) passi una e una sola conica <em>non degenere</em>, ovvero tale che la corrispondente matrice simmetrica associata $3 \times 3$ sia non degenere. Sia ora $\mathcal{C}=\{p_1, \ldots, p_m \} \subset \PP^2$ una collezione di punti distinti <em>in posizione generale</em>. 
+ <p></p>
+ Usando un argomento combinatorico, determinare $| \mathcal{C}|$ affinché per $\mathcal{C}$ passi un'unica sestica liscia.
+ 
+ 
+
+ <h2>Soluzione: 27 </h2>  
+ 
+
+
+
+  Iniziamo a ragionare sulle coniche piane. Una conica $C \subset \PP^2$ è determinata da un polinomio omogeneo di grado 2. Lo spazio vettoriale di tutti questi polinomi è $\CC[x_0, x_1, x_2]_2$, che ha dimensione ${2+2 \choose 2}=6$.
+ <p></p>
+ Questo segue dal noto isomorfismo
+ \[
+ \dim \mathbb{K}[x_0, \ldots, x_n]_d = {n + d \choose d}
+ \]
+ 
+  Poiché $f$ e $\lambda f$ hanno ovviamente lo stesso insieme di soluzioni (luogo degli zeri), possiamo proiettificare questo spazio, e ottenere un $\PP(\CC[x_0, x_1, x_2]_2) \cong \PP^5$.
+  In particolare, ogni punto di questo proiettivo parametrizzerà una conica piana a meno di multipli scalari.
+  <p></p>
+  Consideriamo una qualsiasi di queste coniche, ovviamente da prendere a meno di riscalamento. Ovvero abbiamo
+  
+  \[
+  q(x_0, x_1, x_2) = a_0x_0^2 + a_1 x_0x_1 +a_2 x_0x_2 + a_3 x_1^2+a_4 x_1x_2+a_5x_2^2
+  \]
+  
+  con $a_i \in \CC$.
+  
+  
+  Ogni condizione di passaggio in un punto $p_i$ impone una condizione lineare sui coefficienti della conica, semplicemente considerando la valutazione di un qualsiasi monomio nel punto e estendendo per linearità.
+  In altre parole, $q(p)$ è un polinomio (omogeneo) di grado 1 nelle variabili $a_0, \ldots, h_5$, ottenuta semplicemente imponendo
+  \[
+   q(p) = a_0(x_0^2(p)) + a_1 (x_0x_1)(p) +a_2 (x_0x_2)(p) + a_3 (x_1^2)(p)+a_4 (x_1x_2)(p)+a_5(x_2^2)(p).
+  \]
+  
+  <p></p>
+ In particolare, cinque condizioni indipendenti (corrispondenti alla generalità della collezione dei punti $\{p_1, \ldots, p_5\}$) determinano un'intersezione $Z=V(h_1,\ldots, h_5) \subset \PP^5$, dove ciascun $h_i$ è semplicemente $q(p_i)$. Si ha ovviamente che $Z$ è un punto.
+ <p></p>
+ Possiamo ripetere tale argomento di conteggio per qualsiasi $d$. Avremo che lo spazio proiettivo $\PP$ parametrizzante tutte le curve piane di grado $d$ avrà dimensione dim$(\CC[x_0, x_1, x_2]_d)-1 = {2+d \choose d}-1$. Per arrivare a un'unica curva di grado $d$, avremo bisogno di specificare tante condizioni indipendenti quanta la dimensione. Nel caso $d=6$, dovremo solo sostituire il valore nella precedente formula, ottenendo $| \mathcal{C}|= 28-1=27$.
+ 
+ 
+ 
+
+
+    <div class="link-container">
+        <a href="problema_10.html" class="solution-link">🔙 Torna al giorno 10 </a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

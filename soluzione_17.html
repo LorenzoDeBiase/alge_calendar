@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 17</h1>
+ <h2>Testo</h2>  
+
+
+ Sia $\PP^3(\RR)$ lo spazio proiettivo reale $3$-dimensionale, dotato della topologia euclidea.
+ Si consideri il polinomio omogeneo
+ \[
+ F = x_0^2 + 2 x_0 x_1 - 5 x_2^2 + 3x_3^2 \in \RR[x_0,x_1,x_2,x_3]_2.
+ \]
+ Si consideri il sottoinsieme
+ \[
+ X = \left\{ \left. [x_0:x_1:x_2:x_3] \in \PP^3(\RR) \ \right| \  F(x_0,x_1,x_2,x_3) = 0    \right\}
+ \]
+ dotato della topologia indotta dalla topologia di $\PP^3(\RR)$.
+ 
+ Si provi che $X$ è connesso per archi e si determini il minimo numero di generatori del gruppo fondamentale $\pi_1(X,p)$, dove $p \in X$ è un qualsiasi punto.
+
+
+ <h2>Soluzione: 2</h2>  
+ 
+
+
+
+ 
+ 
+ 
+Dimostreremo che $X$ è omeomorfo al toro reale $2$-dimensionale $S^1 \times S^1$ perciò $X$ è connesso per archi e ha gruppo fondamentale isomorfo a $\ZZ^2$, quindi il minimo numero di generatori del gruppo fondamentale di $X$ è $2$.
+<p></p>
+La forma quadratica $F$ è associata alla matrice simmetrica
+\[
+A = \begin{pmatrix}
+ 1 & 1 & 0 & 0 \\
+ 1 & 0 & 0 & 0 \\
+ 0 & 0 & -5 & 0 \\
+ 0 & 0 & 0 & 3
+\end{pmatrix}.
+\]
+
+<p></p>
+Si vede facilmente, per esempio usando il criterio di Jacobi sulle permanenze e sulle discordanze di segno dei minori diagonali di testa di $A$, che l'indice di positività di $A$ è $2$, l'indice di negatività di $A$ è $2$ e l'indice di nullità di $A$ è $0$.
+La stessa segnatura è posseduta anche dalla matrice
+\[
+B = \begin{pmatrix}
+ 0 & \frac{1}{2} & 0 & 0 \\
+ \frac{1}{2} & 0 & 0 & 0 \\
+ 0 & 0 & 0 & - \frac{1}{2} \\
+ 0 & 0 & -\frac{1}{2} & 0
+\end{pmatrix}.
+\]
+Perciò, per il teorema di classificazione delle forme quadratiche, le due matrici $A$ e $B$ sono congruenti, cioè esiste una matrice $M \in \GL_4(\RR)$ tale che $^t \! M A M = B$.
+<p></p>
+Consideriamo la quadrica associata alla matrice $B$:
+ \[
+Y = \left\{ \left. [x_0:x_1:x_2:x_3] \in \PP^3(\RR) \ \right| \  x_0 x_1 - x_2 x_3 = 0    \right\}.
+\]
+Sia $\phiv \colon \PP^3(\RR) \to \PP^3(\RR)$ la proiettività associata alla matrice $M^{-1}$. Si vede che $\phiv(X) = Y$. Poiché $\phiv$ è un omeomorfismo, abbiamo che $X$ è omeomorfo a $Y$.
+Basta quindi dimostrare che $Y$ è omeomorfo a $S^1 \times S^1$.
+<p></p>
+Consideriamo l'immersione di Segre
+\[
+\Phi \colon \PP^1(\RR) \times \PP^1(\RR) \longrightarrow \PP^3(\RR)
+\]
+data da
+\[
+\Phi \colon \left( [s_0:s_1], [t_0:t_1] \right) \mapsto \left[s_0 t_0 : s_1 t_1 : s_0 t_1 : s_1 t_0  \right].
+\]
+Si possono dimostrare agilmente i seguenti fatti:
+<p></p>
+&emsp;• $\Phi$ è iniettiva,<p></p>
+
+&emsp;• l'immagine di $\Phi$ è $Y$,<p></p>
+
+&emsp;• $\Phi$ è continua rispetto alla topologia euclidea di $\PP^3(\RR)$ e alla topologia prodotto su $\PP^1(\RR) \times \PP^1(\RR)$ (data dal prodotto della topologia euclidea di $\PP^1(\RR)$ con se stessa).
+<p></p>
+
+Quindi $\Phi$ induce una funzione continua e bigettiva da $\PP^1(\RR) \times \PP^1(\RR)$ a $Y$. È ben noto $\PP^1(\RR)$ è omeomorfo a $S^1$ (infatti sono entrambi la compattificazione di Alexandroff di $\RR$). Quindi abbiamo costruito una funzione continua e bigettiva da $S^1 \times S^1 $ a $Y$.
+<p></p>
+
+Questa è un omeomorfismo perché è chiusa poiché $S^1 \times S^1$ è compatto e $Y$ è di Hausdorff.
+
+
+
+
+
+
+
+
+
+    <div class="link-container">
+        <a href="problema_17.html" class="solution-link">🔙 Torna al giorno 17</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

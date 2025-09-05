@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 12 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 12 </h1>
+
+
+    Mentre continuate a conversare con Iski nell'osteria vi rendete conto che le vostre palpebre sono sempre più pesate.
+
+    Anche il vostro follettico sodale appare sempre più assonnato.
+    <p></p>
+    La frequenza degli sbadigli si fa sempre più elevata quando iniziate a pensare che ci sia qualcosa che non va.
+    
+    Uno sguardo preoccupato ad Iski. Uno sguardo al vostro trancio di Chern.
+    <p></p>
+    "Oste cosa hai fatto a questo piatto!" esclama  il folletto adirato verso il bancone.
+    
+    Il volto dell'oste si deforma in un ghigno malefico e la sua ampia e grassa risata rimbomba in tutta la stanza.
+    <p></p>
+    I vostri occhi si stanno chiudendo, provate a risolvere un quesito scritto al margine del vostro tovagliolo per
+    cercare di resistere al sonno incombente!
+  <p></p>
+    
+    
+    
+    
+        Sia $\FF_{11} = \ZZ / 11 \ZZ$ il campo con $11$ elementi e sia $\overline{\FF_{11}}$ la sua chiusura algebrica.
+        Sia $E \subset \PP^2(\overline{\FF_{11}})$ la curva algebrica piana proiettiva definita dall'equazione
+            \[
+        x_0 x_2^2 - \left( x_1^3 + 2 x_0^2 x_1 + 2x_0^3  \right) = 0.
+        \]
+        Sia $\PP^2(\FF_{11})$, lo spazio proiettivo sul campo $\FF_{11}$: esso è un sottoinsieme di $\PP^2(\overline{\FF_{11}})$. Si ponga
+        \[
+        E(\FF_{11}) = E \cap \PP^2(\FF_{11}).
+        \]
+        In altre parole, $E(\FF_{11})$ è l'insieme dei punti di $E$ che possono avere tutte e tre le coordinate omogenee in $\FF_{11}$.
+        <p></p>
+        Si determini la cardinalità di $E(\FF_{11})$.
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_12.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 9; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Calendario dell'Avvento</title>
+  <style>
+body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+
+
+
+    .tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* più spazio tra le righe */
+      margin-top: 20px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* più spazio tra le palline */
+    }
+
+    .ornament {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    .ornament:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 6px rgba(255,255,255,0.2); }
+      50% { box-shadow: 0 0 18px rgba(255,255,255,0.8); }
+    }
+
+    /* Tronco */
+    .trunk {
+      width: 100px;
+      height: 120px;
+      background: #8d5524;
+      margin: 20px auto 0 auto;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+    <h1>AlGe Calendar</h1>
+    <h2>🎄- What</h2>    
+    
+        Questa è la versione interattiva dell'<a href="https://sites.google.com/view/enricofatighenti/alge-calendar">Alge Calendar</a>, il calendario dell'avvento di geometria algebrica (e dintorni). Ogni giorno un nuovo esercizio, e la soluzione dell'esercizio del giorno precedente. Il tutto condito da una storia natalizia a tema più o meno matematico. 
+        Ogni esercizio avrà come soluzione un numero intero! Gli esercizi sono pensati per essere di difficoltà (vagamente) crescente.
+    <h2>🎄- When</h2>  
+        Dal 1 al 25 Dicembre (come ogni calendario dell'avvento che si rispetti). Ogni giorno a mezzanotte si sblocca una pallina nuova. In altri periodi dell'anno, potreste trovarle tutte bloccate o già sbloccate.
+    <h2>🎄- Who</h2>   
+    
+        Se si intende chi può partecipare, sono tutti benvenuti/e. Idealmente gli studenti di Matematica dal terzo anno in su avranno più strumenti a disposizione, ma alcuni esercizi saranno alla portata di tutti gli anni. 
+        Se invece si intende chi ha creato questa roba, la matematica è a cura di <a href="https://sites.google.com/view/enricofatighenti/home">Enrico Fatighenti</a> e <a href="https://www.dm.unibo.it/~andrea.petracci3/">Andrea Petracci</a>, il Natale è a cura di <a href="https://sites.google.com/view/lorenzodebiase/home">Lorenzo De Biase</a>.
+        <h2>🎄- Where </h2>   
+    Liberamente su questo sito. Per il momento non abbiamo ancora implementato un modo per registrare quante risposte corrette avete già inserito.
+    <h2>🎄- Why </h2>  
+    
+        Per divertirsi (e magari imparare qualcosa). Questo calendario NON è una gara, NON è una competizione, NON premia la più rapida, il più furbo o quant'altro. La collaborazione è estremamente incoraggiata. 
+        Siamo più che disponibili a chiarirvi qualsiasi dubbio sulle soluzioni. In sintesi, sì presa a bene, sì birrette.
+    
+        <p></p>
+
+        Seleziona una pallina dall'albero:
+    
+
+  <div class="calendar-container">
+    <div class="tree" id="tree"></div>
+    <div class="trunk"></div>
+  </div>
+
+  <script>
+    const tree = document.getElementById("tree");
+    let day = 1;
+
+    // Struttura dell'albero (quanti giorni per riga)
+    const rows = [1, 2, 3, 4, 5, 6, 4]; // Totale 25
+
+    // Tavolozza di 25 colori diversi (gradiente fisso)
+    const colors = [
+      ["#e63946", "#a31a22"], ["#2a9d8f", "#1b6d65"], ["#f4a261", "#e76f51"],
+      ["#457b9d", "#1d3557"], ["#ffb703", "#fb8500"], ["#8ecae6", "#219ebc"],
+      ["#9d4edd", "#5a189a"], ["#06d6a0", "#118ab2"], ["#ef476f", "#d62828"],
+      ["#ff6d00", "#e65100"], ["#90be6d", "#588157"], ["#f72585", "#7209b7"],
+      ["#118ab2", "#073b4c"], ["#e9c46a", "#f4a261"], ["#2b9348", "#007f5f"],
+      ["#ff0054", "#d81159"], ["#48cae4", "#0096c7"], ["#f77f00", "#d62828"],
+      ["#8338ec", "#3a0ca3"], ["#06d6a0", "#118ab2"], ["#ffafcc", "#cdb4db"],
+      ["#a8dadc", "#457b9d"], ["#ffbe0b", "#fb5607"], ["#9ef01a", "#38b000"],
+      ["#ff006e", "#8338ec"]
+    ];
+
+    rows.forEach(count => {
+      const row = document.createElement("div");
+      row.className = "row";
+
+      for (let i = 0; i < count; i++) {
+        if (day > 25) break;
+
+        const ornament = document.createElement("a");
+        ornament.className = "ornament";
+        ornament.href = `problema_${day}.html`;
+        ornament.textContent = day;
+
+        const [c1, c2] = colors[day - 1];
+        ornament.style.background = `radial-gradient(circle at top left, ${c1}, ${c2})`;
+
+        row.appendChild(ornament);
+        day++;
+      }
+
+      tree.appendChild(row);
+    });
+  </script>
+</body>
+</html>

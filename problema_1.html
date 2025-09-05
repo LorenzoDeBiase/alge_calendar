@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 1 </title>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+ 
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 1</h1>
+
+     Eccolo qui Dicembre! Solo a pronunciarne il nome vi tornano in mente i ricordi delle sere d'infanzia trascorse ad aspettare il Natale! Ne è passato di tempo dai giorni spesi a scartare regali e a mangiare i cioccolatini del calendario dell'avvento.
+    
+     <p>
+    </p> 
+    Prima che quel pizzico di nostalgia prenda il sopravvento decidete di uscire di casa a prendere un po' di aria fresca.
+    Attraverso strade e cammini vi allontanate dal centro della città, dove il via vai di mezzi e persone fa commutare confusamente tutti i pensieri nella vostra testa.
+    <p>
+    </p> 
+    Un vento frizzantino spazza via tutta la vostra nostalgia mentre vi inoltrate su un sentiero di campagna che conduce in lontananza ad un bosco di abeti che non avevate mai visto. 
+    <p>
+    </p> 
+        
+   "Che strano un bosco di abeti da queste parti!" pensate, mentre attraversate il limitare della foresta.
+   <p>
+</p> 
+    D'un tratto vedete dietro un paio di alberi un buffo omino vestito completamente di verde tirare fuori un enorme orologio a cipollotto ed esclamare preoccupato:
+        "È Tarski, Tarski sai!"
+        <p>
+        </p>    
+        
+        Neanche il tempo di finire la frase che come una saetta si dirige verso una spaccatura del terreno e dopo qualche istante sparisce.
+        <p>
+        </p> 
+        Increduli vi avvicinate alla spaccatura dove con maggiore incredulità constatate non c'è evidentemente nessun modo per attraversarla.
+        <p>
+        </p> 
+        C'è solo un riquadro di neve verdognola dove poter disegnare dei numeri col dito ed un cartello con scritto:
+        <p>
+        </p> 
+        Sia     \(\mathbb{F}_5 = \mathbb{Z} / 5 \mathbb{Z}  \ \)  il campo con \(5\) elementi, dato dalle classi resto degli interi modulo \(5\). Siano \(0,1,2,3,4\) gli elementi di \(\mathbb{F}_5\).
+                Sia \(S \subseteq (\mathbb{F}_5)^3 \) l'insieme costituito dalle terne \((x,y,z) \in (\mathbb{F}_5)^3 \) che soddisfano le seguenti equazioni:
+                \[
+                \left\{
+                \begin{array}{l}
+                    2x + 3 y + z = 1 \\
+                    x + 4y + 4z = 2 \\
+                    3x + 2 y + 3z = 0
+                \end{array}
+                \right.
+                \]
+                Si determini la cardinalità dell'insieme \(S\).
+    
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_1.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 5; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

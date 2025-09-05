@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 20 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 20</h1>
+
+
+    Siete arrivati con Iski nella foresta randomica alla ricerca del covo incognito dell'Organizzazione.
+
+    Avanzate nel folto della foresta con cautela e con occhio vigile.
+    
+<p></p>
+
+    Intorno a voi cluster di abeti secolari si uniscono e si intersecano mantenendo la loro struttura. Un sinistro vento freddo ne smuove violentemente le chiome in un sigmavortice.
+    
+    <p></p>
+    Col naso all'insù non vi accorgete di essere entrati nel dominio di una bestia selvatica, piena di aculei, ma soltanto nell'area sopra la diagonale.
+    
+    <p></p>
+    "Oh no!" esclama Iski preoccupato "quello è un matristrice triangolare superiore! 
+    Dobbiamo fare molta attenzione, sono bestie molto territoriali e se vedono i bordi del loro dominio attraversati da un estraneo lo attaccano lanciandogli contro tutti gli aculei.
+    
+    <p></p>
+    
+    Ed è quello che sta per fare adesso! Presto contiamo quanti sono tutti gli aculei da schivare!"
+    <p></p>
+    
+    Sia $V_6$ uno spazio vettoriale su $\CC$ di dimensione 6 con base fissata $v_1, \ldots, v_6$. Consideriamo una forma simplettica $\omega$, ovvero una forma bilineare anti-simmetrica non degenere. Ricordiamo che un sottospazio $U \subset V_6$ si dice \emph{isotropo} per $\omega$ se $\omega(u_1, u_2)=0$ per ogni $u_1, u_2 \in U$.
+    <p></p>
+    Consideriamo adesso $\Lambda$, lo spazio delle forme bilineari antisimmetriche su $V_6$, e $W_k \subset \Lambda$ un sottospazio di dimensione $k$. Sia inoltre $A_k$
+    definito come
+    \[
+    A_k:= \{ U \subset V_6 \ | \ \dim U=2,\ U \textrm{ isotropo per tutti gli } \omega \in W_k \},
+    \]
+    per $W_k$ generico.
+    <p></p>
+    Determinare:
+    <p></p>
+    &emsp; 1- il minimo $k$ per cui $A_k$ è un insieme finito;
+
+    <p></p>
+
+    &emsp; 2- fissato tale $k$, determinare $|A_k|$.
+
+    <p></p>
+
+
+
+    Per la soluzione, moltiplicare dunque:
+    \[
+    S=k|A_k|.
+    \]
+    
+    
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_20.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 112; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

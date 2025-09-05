@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 19</h1>
+ <h2>Testo</h2>  
+
+ Si consideri la Grassmanniana $G=\Gr(2, V_5)$, immersa tramite Plücker, e l'anello omogeneo delle coordinate associato $R_G$, considerato come anello graduato $R_G \cong \bigoplus_{d \geq 0}[R_G]_d$.
+ <p></p> Determinare \[
+ D:= \dim [R_G]_2.
+ \]
+
+
+ <h2>Soluzione: 50 </h2>  
+ 
+
+ 
+
+ 
+ 
+
+ Ricordiamo l'immersione di Plücker, che manda \[P: \Gr(k, V_n) \longrightarrow \PP(\bigwedge^k V_n).\]
+ Se $U=\textrm{Span}\{u_1, \ldots, u_k\}$, allora $P(U)= [u_1 \wedge \ldots \wedge u_k]$. Equivalentemente, possiamo descrivere $\Gr(k,n)$ come il luogo degli elementi $\omega \in \W^k V_n$ \emph{totalmente decomponibili}, ovvero che ammettono una scomposizione
+ \[
+ \omega= u_1 \wedge \ldots \wedge u_k
+ \]
+ per certi $u_i \in V_n$. L'anello delle coordinate di $\Gr(k,V_n)$ per definizione sarà dato da $$\CC[w_1, \ldots, w_{{n \choose k}}]/_{ I_P},$$ con $w_i = v_{j_1} \wedge \ldots \wedge v_{j_k}$ (per esempio ordinati in maniera lessicografica) e $I_P$ l'ideale generato dalle relazioni di Plücker.
+ 
+ Consideriamo ora il caso $k=2$. Quali sono gli elementi di $\W^2 V_5$ che sono totalmente decomponibili?
+ <p></p>
+ Prendiamo un tale $w= x_{12}v_1 \wedge v_2 + \ldots + x_{45} v_4 \wedge v_5$.
+ Similmente al caso dell'immersione di Segre, dobbiamo considerare solo quelle matrici delle coordinate
+ \[
+ \begin{pmatrix}
+     0 &x_{12} & x_{13} & x_{14} &x_{15}\\
+     & 0 & x_{23} & x_{24} & x_{25}\\
+  -x_{ij}   & & 0& x_{34}&x_{35} \\
+ &&&0& x_{45}\\
+ &&&&0\end{pmatrix}
+ \]
+ che abbiano rango minimale, ovvero $\leq 2$ (in effetti, esattamente 2). Poiché questa matrice è antisimmetrica, si tratta di annullare i minori diagonali $4 \times 4$, che sono ${5 \choose 4}=5$. Ciascuna di queste equazioni è quartica a priori, ma poiché tutti questi minori sono anti-simmetrici, ogni determinante è il quadrato del suo Pfaffiano. Abbiamo dunque 5 relazioni quadratiche, che definiscono i generatori di $I_P$.
+ 
+ <p></p>
+ Segue che la dimensione cercata è
+ \[
+ \dim \Sym^2 \W^2 V_5 -5 ={11 \choose 2}-5=50.
+ \]
+ 
+ 
+ 
+
+    <div class="link-container">
+        <a href="problema_19.html" class="solution-link">🔙 Torna al giorno 19 </a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 18 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 18</h1>
+
+
+    Come ormai ben sapete, l'unico modo per scovare dove sia il rifugio incognito dell'Organizzazione è quello di andare ad interrogare l'oste della locanda.
+
+    <p></p>
+
+    Lo andate a prendere con le mani in pasta mentre sta preparando delle tartagliatelle nel retro.
+    
+    "Cosa volete da me???" geme mentre lo legate con catene ascendenti. <p></p>
+
+    
+    
+    "Ce lo chiedi pure?!? Dopo quello che hai combinato, come minimo locale devi dirci dove trovare il rifugio incognito dell'Organizzazione!"
+  
+
+    
+    "GIAMMAI!!!"
+    
+    <p></p>
+    
+    "Neanche se ti diamo una mano con i tuoi esami di Geometria?"
+    
+    Gli occhi dell'oste si illuminano della speranza di chi, dopo anni passati a provare ogni appello possibile, intravede che forse è la volta buona per arrivare a 18.
+    <p></p>
+    
+    
+    "Davvero mi aiutereste con questo esercizio???"
+    <p></p>
+
+    
+    
+    
+        Sia $f \colon \ZZ^4 \to \ZZ^3$ l'omomorfismo di gruppi abeliani definito dalla moltiplicazione per la matrice
+        \[
+        A =
+        \begin{pmatrix}
+              9 &  -12 &  24  &  9 \\
+             -6 &  9 & -18 & -6 \\
+              3 & 12 & -18 & -3
+        \end{pmatrix}.
+        \]
+        Il conucleo è il codominio modulo l'immagine: $\coker  f := \ZZ^3 / \im  f$.<p></p>
+
+        Si determini la cardinalità di $\coker  f$, ovvero si determini l'indice dell'immagine di $f$ in $\ZZ^3$.
+    
+    
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_18.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 54; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

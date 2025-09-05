@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 14</h1>
+ <h2>Testo</h2>  
+
+
+ Consideriamo $X=V(f) \subset \PP^3$ una ipersuperficie quartica liscia, e il seguente anello graduato associato a $X$:
+ \[
+ R_f := \CC[x_0, \ldots, x_3] /J_f
+ \]
+ con 
+ \[
+ J_f=\left(\frac{\partial f}{\partial x_0}, \ldots, \frac{\partial f}{\partial x_3}\right).
+ \]
+ Dopo aver dimostrato che sotto queste ipotesi $R_f$ è finito dimensionale come spazio vettoriale, si denoti con $\sigma$
+ 
+ \[
+ \sigma := \textrm{max }  \{ d \ | \ (R_f)_d \neq 0 \},
+ \]
+ dove $(R_f)_d$ denota la componente graduata di $R_f$ di grado $d$.
+ Calcolare 
+ \[
+ D:= \sigma \cdot \dim (R_f)_{\sigma-1}
+ \]
+ [Suggerimento: si può usare il fatto (non banale!) che $\sigma$ e le dimensioni delle varie componenti graduate di $R_f$ sono indipendenti dalla scelta di $f$, purché la corrispondente $X$ sia liscia.]
+  
+
+ <h2>Soluzione: 32 </h2>  
+ 
+ 
+ L'anello $R_f$ introdotto nel problema è noto come <em>anello Jacobiano</em>, ed è alla base di molti risultati in teoria di Hodge, teoria delle deformazioni e così via. Dal punto di vista algebrico, è un anello artiniano di Gorenstein, una classe di oggetti dalle proprietà particolarmente gradevoli.
+ <p></p>
+
+ Per risolvere questo esercizio, usiamo il suggerimento (che deriva dal fatto che le derivate parziali formino una sequenza regolare). Scriviamo $f$ in una forma particolarmente conveniente, ovvero di tipo-Fermat. Facciamo i conti in piena generalità, dunque per una ipersuperficie di Fermat 
+ \[
+ F= \sum_{i=0}^n x_i^d
+ \]
+ di grado $d\geq 3$ in $\PP^n$. L'ideale $J_f$ è dunque generato da $ \left( x_0^{d-1}, \ldots, x_n^{d-1} \right)$. Notiamo immediatamente come, se $h \in \CC[x_0, \ldots, x_n]_p$ con $p> (d-2)(n+1)$, allora $h=0$  in $R_f$. Infatti, se $h$ ha tale grado, ogni monomio dovrà contenere per forza $x_i^d$ per un qualche $d$.
+ D'altra parte, $G= x_0^{d-2} \cdot \ldots \cdot x_n^{d-2} \neq 0$ in $(R_f)_{(d-2)(n+1)}$, ed il suo l'unico generatore.
+ 
+ Abbiamo dunque \[
+ \sigma=(d-2)(n+1),
+ \]
+ con $(R_f)_\sigma$ che in letteratura si indica come <em>socle</em> (o <em>zoccolo</em>).
+ 
+ Notiamo inoltre ogni importante proprietà: a ogni monomio di grado $1$ in $(R_f)_1$ è associato unicamente un monomio (non-nullo) $\alpha \in (R_f)_{\sigma-1}$ semplicemente tramite
+ \[
+ (R_f)_1 \times (R_f)_{\sigma-1} \to (R_f)_{\sigma} \cong \CC
+ \]
+ \[
+ (x_i, \alpha ) \mapsto x_0^{d-2} \cdot \ldots \cdot x_n^{d-2}
+ \]
+ ovvero
+ \[\alpha=x_0^{d_2} \ldots x_i^{d-3} \ldots x_n^{d-2}\]
+ Questa è una prima istanza di un fenomeno molto più generale chiamata <em>dualità locale</em>.
+ In particolare, si ha che 
+ \[
+ \dim (R_f)_{\sigma-1}=\dim (R_f)_{1} =\dim \CC[x_0, \ldots, x_n]= n+1.
+ \]
+ 
+ Per calcolare il nostro $D$ basta sostituire appositamente, ottenendo dunque
+ \[
+ D= 8 \cdot 4=32.
+ \]
+ 
+
+    <div class="link-container">
+        <a href="problema_14.html" class="solution-link">🔙 Torna al giorno 14</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

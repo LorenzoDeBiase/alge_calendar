@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/math-env.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 18</h1>
+ <h2>Testo</h2>  
+
+ Sia $f \colon \ZZ^4 \to \ZZ^3$ l'omomorfismo di gruppi abeliani definito dalla moltiplicazione per la matrice
+ \[
+ A =
+ \begin{pmatrix}
+       9 &  -12 &  24  &  9 \\
+      -6 &  9 & -18 & -6 \\
+       3 & 12 & -18 & -3
+ \end{pmatrix}.
+ \]
+ Il conucleo è il codominio modulo l'immagine: $\coker  f := \ZZ^3 / \im  f$.<p></p>
+
+ Si determini la cardinalità di $\coker  f$, ovvero si determini l'indice dell'immagine di $f$ in $\ZZ^3$.
+  
+
+
+ <h2>Soluzione: 54 </h2>  
+ 
+
+
+
+ 
+ La classe di isomorfismo di $\coker f$ non cambia se $f$ è precomposto con un automorfismo di $\ZZ^4$ ed è postcomposto con un automorfismo di $\ZZ^3$.
+ Quindi possiamo moltiplicare a piacimento la matrice $A$ a destra per una matrice di $\mathrm{GL}_4(\ZZ)$ e a sinistra per una matrice di $\GL_3(\ZZ)$.<p></p>
+<p></p>
+ In particolare, possiamo usare le mosse di Gauß sulle righe e sulle colonne di $A$ per rendere la matrice $A$ piú "semplice", magari "diagonale".<a href="#footnote-1">[*]</a>
+
+ <p></p>
+  Ricordiamo le mosse di Gauß sono: scambiare due linee, moltiplicare una linea per un elemento invertibile (in questo caso gli unici invertibili dell'anello $\ZZ$ sono $\pm 1$, quindi una linea può essere cambiata di segno), aggiungere a una linea un multiplo di un'altra linea.
+ <p></p>
+
+ Partiamo dall'elemento di posto $(1,1)$, il $9$, e cerchiamo di mettere zero sotto di lui. L'elemento immediatamente sotto è $-6$.
+ <p></p>
+ Se lavorassimo sul campo $\QQ$ basterebbe aggiungere alla seconda riga $ \frac{6}{9}$ volte la prima riga. Ma questo non si può fare perché stiamo lavorando su $\ZZ$.
+ <p></p>
+ Si vede che tutti gli elementi della prima colonna sono divisibili per $3$, quindi la cosa piú furba da fare è scambiare la prima riga con la terza riga, di modo che il $3$ compaia al posto $(1,1)$:
+ \[
+\begin{pmatrix}
+ 3 & 12 & -18 & -3 \\
+ -6 &  9 & -18 & -6 \\
+ 9 &  -12 &  24  &  9 
+\end{pmatrix}.
+\]
+Ora uso le mosse di Gauß sulle righe per mettere zeri sotto il $3$, ovvero alla seconda riga aggiungo $2$ volte la prima riga e alla terza riga sottraggo $3$ volte la prima riga, cosí ottengo:
+     \[
+ \begin{pmatrix}
+     3 & 12 & -18 & -3 \\
+             0 &  33 & -54 & -12 \\
+     0 &  -48 &  78  &  18 
+ \end{pmatrix}.
+ \]
+ Per fortuna gli elementi della prima riga sono divisibili per il pivot $3$ in posizione $(1,1)$. Posso usare le mosse di Gauß sulle colonne per mettere zeri a destra del $3$: sottraggo alla seconda colonna $4$ volte la prima colonna, aggiungo alla terza colonna $6$ volte la prima colonna, sommo alla quarta colonna la prima colonna. Ottengo
+     \[
+\begin{pmatrix}
+ 3 & 0 & 0 & 0 \\
+ 0 &  33 & -54 & -12 \\
+ 0 &  -48 &  78  &  18 
+\end{pmatrix}.
+\]
+Ora dobbiamo sistemare il blocco $2 \times 3$ in basso a destra. Il massimo comun divisore dei sei elementi che compaiono in questo blocco è $3$, ma purtroppo il $3$ non compare tra gli elementi. In questo caso (piú sfortunato rispetto al precedente) dobbiamo usare l'identità di Bezout.
+<p></p>
+Consideriamo i due elementi non nulli della seconda colonna e ne calcoliamo il massimo comun divisore: $\gcd(33,-48)=3$. Calcoliamo $\frac{33}{3} = 11$ e $\frac{-48}{3} = -16$.
+<p></p>
+Trovo l'identità di Bezout per $\gcd(11,-16) = 1$, cioè $1 = 11 \cdot 3  + (-16) \cdot 2$. Moltiplichiamo la nostra matrice $3 \times 4$ a sinistra per la matrice invertibile
+\[
+\begin{pmatrix}
+ 1 & 0 & 0 \\
+ 0 & 3 & 2 \\
+ 0 & 16 & 11
+\end{pmatrix}
+\]
+e otteniamo
+     \[
+\begin{pmatrix}
+ 3 & 0 & 0 & 0 \\
+ 0 &  3 & -6 & 0 \\
+ 0 &  0 &  6  &  0 
+\end{pmatrix}.
+\]
+Per fortuna l'elemento di posto $(2,2)$ divide tutti gli elementi sulla seconda riga, quindi usando delle mosse sulle colonne posso mettere zeri a destra di lui:
+     \[
+\begin{pmatrix}
+ 3 & 0 & 0 & 0 \\
+ 0 &  3 & 0 & 0 \\
+ 0 &  0 &  6  &  0 
+\end{pmatrix}.
+\]
+Questo dimostra che $\coker f$ è isomorfo a $(\ZZ / 3 \ZZ)^2 \times \ZZ / 6 \ZZ$, che ha ordine $54$.
+
+<p></p>
+Si può vedere che se
+\[
+M = \begin{pmatrix}
+ 1 & 1 & 0 \\
+ 0& 1& 0 \\
+ 1& 0& 1 \\
+ 
+\end{pmatrix}
+\quad \text{e} \quad
+N = \begin{pmatrix}
+ -7& -3&  2& -1\\
+ 10 &  5 & -2 & 2\\
+ 4 & 2 & -1 & 1\\
+ 10 & 4 & -2 & 1
+\end{pmatrix}
+\]
+allora $\det M = \det N = 1$ e 
+\[
+MAN = \begin{pmatrix}
+ 3 & 0 & 0 & 0 \\
+ 0 & 3 & 0 & 0 \\
+ 0 & 0 & 6 & 0
+\end{pmatrix}
+\]
+
+
+<p></p>
+
+Cerchiamo di inquadrare la questione da un punto di vista piú teorico.
+
+<div class="theorem"><b>[Forma normale di Smith]</b> <p></p>
+ Sia $R$ un dominio a ideali principali. Siano $m,n \geq 1$ interi. Sia $A \in M_{m,n}(R)$ una matrice $m \times n$ con entrate in $R$.
+ <p></p>
+ Allora esistono due matrici invertibili $M \in \GL_m(R)$ e $N \in \GL_n(R)$ tali che $MAN$ è tale che:
+<p></p>
+      &emsp;• $MAN$ è "diagonale", cioè se $1 \leq i \leq m$ e $1 \leq j \leq n$ sono interi tali che $i \neq j$ allora l'elemento di $MAN$ di posto $(i,j)$ è zero,
+      <p></p>
+      &emsp;• sulla "diagonale" di $MAN$ ogni elemento divide il successivo (andando da in alto a sinistra verso in basso a destra), cioè se per ogni $1 \leq i \leq \min \{m,n\}$ $d_i$ denota l'elemento di posto $(i,i)$ in $MAN$ allora si ha la seguente catena di divisibilità
+     \[
+     d_1 | d_2 | \cdots | d_{\min\{m,n\}},
+     \]
+     ovvero la seguente catena di ideali di $R$
+     \begin{equation} \label{eq:ideali_smith}
+     (d_1) \supseteq (d_2) \supseteq \cdots \supseteq (d_{\min\{m,n\}}).
+     \end{equation}
+
+ Inoltre gli elementi $d_1, \dots, d_{\min\{m,n\}}$ come sopra sono univocamente determinati dalla matrice $A$, a meno di associati; equivalentemente gli ideali nella catena~\eqref{eq:ideali_smith} sono univocamente determinati dalla matrice $A$. Piú precisamente, per ogni $i = 1, \dots, \min\{m,n\}$, l'ideale $(\prod_{j=1}^i d_j)$ è l'ideale generato dai minori $i \times i$ di $A$.
+</div>
+
+Si noti che quando $R$ è un campo si ottiene il ben noto risultato di algebra lineare:
+
+<div class="theorem">
+ Sia $k$ un campo. Siano $m,n \geq 1$ interi. Sia $A \in M_{m,n}(k)$ una matrice $m \times n$ con entrate in $k$. Sia $r$ il rango di $A$.
+ 
+ Allora esistono due matrici invertibili $M \in \GL_m(k)$ e $N \in \GL_n(k)$ tali che
+ \[
+ MAN = \left(\begin{array}{c|c}
+     I_r & 0_{r,n-r} \\
+     \hline
+0_{m-r,r} & 0_{m-r,n-r}
+     \end{array} \right).
+ \]
+</div>
+
+<div class="proof">
+Sia $v_{r+1}, \dots, v_n$ una base di $\ker A$. La si completa a una base di $k^n$: $v_1, \dots, v_r, v_{r+1}, \dots, v_n$.
+È ben noto che $Av_1, \dots, Av_r$ formano una base di $\im A$; la si completa a una base di $k^m$: $A v_1, \dots, A v_r, w_{r+1}, \dots, w_m$.
+Rispetto a queste due basi, l'applicazione lineare $\cdot A \colon k^n \to k^m$ è rappresentata dalla matrice nell'enunciato.
+  <div class="qed">∎</div>
+</div>
+
+Ora veniamo alla dimostrazione della forma normale di Smith. Ci servono dei lemmi preliminari.
+
+<div class="lemma"> <small id="#lemma-1">[1]</small> <p></p>
+ Sia $R$ un dominio a ideali principali. Siano $m,n \geq 1$ interi. Sia $A \in M_{m,n}(R)$ una matrice $m \times n$ con entrate in $R$. Allora:
+ <p></p>
+ &emsp; 1- esiste una matrice invertibile $M \in \GL_m(R)$ tale che $MA$ è tale che la prima colonna di $MA$ è nulla (escluso al piú l'elemento di posto $(1,1)$) e l'elemento di $MA$ di posto $(1,1)$ è il massimo comun divisore degli elementi della prima colonna di $A$;
+ <p></p>    
+ &emsp; 2- esiste una matrice invertibile $N \in \GL_n(R)$ tali che $AN$ è tale che la prima riga di $AN$ è nulla (escluso al piú l'elemento di posto $(1,1)$) e l'elemento di $AN$ di posto $(1,1)$ è il massimo comun divisore degli elementi della prima riga di $A$.
+
+ </div>
+
+<div class="proof">
+ Dimostriamo solo (1) perché la dimostrazione di (2) è completamente analoga.
+ 
+ Se $m=1$ non c'è nulla da dimostrare. Supponiamo $m \geq 2$.
+ Sia $a$ l'elemento di $A$ di posto $(1,1)$ e sia $b$ quello immediatamente sotto, cioè quello di posto $(2,1)$.
+ Sia $d = \gcd(a,b)$ il massimo comun divisore tra $a$ e $b$. Per l'identità di Bezout esistono $s,t \in R$ tali che $d = as +bt$. Allora si considera la matrice $2 \times 2$ invertibile
+ \begin{equation} \label{eq:matrice2x2}
+ \begin{pmatrix}
+     s & t \\
+     - \frac{b}{d} & \frac{a}{d}
+ \end{pmatrix}
+ \end{equation}
+ e si osserva
+     \[
+ \begin{pmatrix}
+     s & t \\
+     - \frac{b}{d} & \frac{a}{d}
+ \end{pmatrix}
+ \begin{pmatrix}
+     a \\ b
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+     d \\ 0
+ \end{pmatrix}.
+ \]
+ Consideriamo quindi la matrice $X_2$ $m \times m$ diagonale a blocchi cosí fatta: il blocco $2 \times 2$ in alto a sinistra è la matrice~\eqref{eq:matrice2x2} e il blocco $(m-2) \times (m-2)$ in basso a destra è l'identità. Si vede immediatamente che $X_2$ è invertibile e che $X_2 A$ è tale che il suo elemento di posto $(1,1)$ è $d$ (che è il massimo comun divisore dei primi due elementi della prima colonna di $A$) e il suo elemento di posto $(2,1)$ è $0$. Si noti inoltre che nelle righe di indice $\geq 3$ la matrice $X_2 A$ coincide con $A$.
+ 
+ A questo punto si ripete il ragionamento appena fatto considerando l'elemento di posto $(1,1)$ di $X_2 A$ e l'elemento di posto $(3,1)$ di $X_2 A$ (che è anche l'elemento di posto $(3,1)$ in $A$). Si ottiene una matrice invertibile $X_3$ tale che l'elemento di posto $(1,1)$ di $X_3 X_2 A$ è il massimo comun divisore dei primi $3$ elementi della prima colonna di $A$ e gli elementi di posto $(2,1)$ e $(3,1)$ di $X_3 X_2 A$ sono nulli.
+ 
+ Si procede cosí scendendo lungo la prima colonna. La matrice $M$ voluta è il prodotto $X_m \cdots X_2$.
+  <div class="qed">∎</div>
+</div>
+
+
+<div class="lemma"> <small id="#lemma-2">[2]</small> <p></p>
+Sia $R$ un dominio a ideali principali. Siano $m,n \geq 1$ interi. Sia $A \in M_{m,n}(R)$ una matrice $m \times n$ con entrate in $R$. Allora esistono due matrici invertibili $M \in \GL_m(R)$ e $N \in \GL_n(R)$ tale che $MAN$ è diagonale, cioè gli elementi di $MAN$ di posto $(i,j)$ con $i \neq j$ sono nulli.
+</div>
+
+<div class="proof">
+ Sia $a_1$ l'elemento di posto (1,1) di $A$.
+Per Lemma~<a href="#lemma-1">[1]</a>(1) $A$ è equivalente alla matrice
+\[
+A_2 = \begin{pmatrix}
+ a_2 & * & \cdots & * \\
+ 0 & * & \cdots & * \\
+ \vdots & \vdots & & \vdots \\
+ 0 & * & \cdots & *
+\end{pmatrix}
+\]
+e $a_2$ è il massimo comun divisore degli elementi della prima colonna di $A$.
+Per Lemma~<a href="#lemma-1">[1]</a>(2) $A_2$ è equivalente alla matrice
+\[
+A_3 = \begin{pmatrix}
+ a_3 & 0 & \cdots & 0 \\
+ * & * & \cdots & * \\
+ \vdots & \vdots & & \vdots \\
+ * & * & \cdots & *
+\end{pmatrix}
+\]
+e $a_3$ è il massimo comun divisore degli elementi della prima riga di $A_2$.
+Per Lemma~<a href="#lemma-1">[1]</a>(1) $A_3$ è equivalente alla matrice
+\[
+A_4 = \begin{pmatrix}
+ a_4 & * & \cdots & * \\
+ 0 & * & \cdots & * \\
+ \vdots & \vdots & & \vdots \\
+ 0 & * & \cdots & *
+\end{pmatrix}
+\]
+e $a_4$ è il massimo comun divisore degli elementi della prima colonna di $A_3$. E cosí via.
+
+Abbiamo una catena di ideali $(a_1) \subseteq (a_2) \subseteq (a_3) \subseteq (a_4) \subseteq \cdots$. Poiché $R$ è un PID, questa catena si stabilizza. In particolare, trovo $k$ dispari tale che $(a_k) = (a_{k+1})$. Poiché $a_{k+1}$ è il massimo comun divisore degli elementi della prima colonna di $A_k$, si che $a_k$ divide tutti gli elementi della prima colonna di $A_k$; cioè $A_k$ è del tipo
+\[
+A_k = \begin{pmatrix}
+ a_k & 0 & \cdots & 0 \\
+ \lambda_2 a_k & * & \cdots & * \\
+ \vdots & \vdots & & \vdots \\
+ \lambda_m a_k & * & \cdots & *
+\end{pmatrix}
+\]
+per opportuni $\lambda_2, \dots, \lambda_m \in R$.
+Usando delle semplici mosse di Gau\ss{} (alla riga $i$-esima si toglie $\lambda_i$ volte la prima riga), si vede che $A_k$ (e quindi anche $A$) è equivalente a una matrice del tipo
+\[
+\begin{pmatrix}
+ * & 0 & \cdots & 0 \\
+ 0 & * & \cdots & * \\
+ \vdots & \vdots & & \vdots \\
+ 0 & * & \cdots & *
+\end{pmatrix}
+\]
+A questo punto si può ripetere il ragionamento sul blocco $(m-1) \times (n-1)$ in basso a destra di quest'ultima matrice. E cosí via.
+  <div class="qed">∎</div>
+</div>
+
+<div class="proof"><b>[Dimostrazione dell'esistenza della forma normale di Smith]</b>> <p></p>
+Abbiamo visto in Lemma~<a href="#lemma-2">[2]</a> che ogni matrice è equivalente a una matrice diagonale. Dobbiamo far vedere che ogni matrice diagonale è equivalente a una matrice diagonale dove ogni elemento diagonale divide il successivo.
+
+Supponiamo di avere una matrice diagonale $A \in M_{m,n}(R)$. Siano $a$ e $b$ gli elementi diagonali di $A$ di posti $(1,1)$ e $(2,2)$ rispettivamente.
+Poniamo $d = \gcd(a,b) = as + bt$ per opportuni $s,t \in R$.
+Contemplando l'uguaglianza
+\[
+\begin{pmatrix}
+ s & t \\ -\frac{b}{d} & \frac{a}{d}
+\end{pmatrix}
+\begin{pmatrix}
+ a & 0 \\ 0 & b
+\end{pmatrix}
+\begin{pmatrix}
+ 1 & - \frac{tb}{d} \\
+ 1 & \frac{sa}{d}
+\end{pmatrix}
+=
+\begin{pmatrix}
+ d & 0 \\ 0 & \frac{ab}{d}
+\end{pmatrix}
+\]
+ci si convince che $A$ è equivalente a una matrice diagonale in cui il primo elemento diagonale divide il secondo elemento diagonale. Ripetento il ragionamento tra il primo elemento e il terzo elemento, e poi tra il primo e il quarto e cosí via, si ottiene che $A$ è equivalente a una matrice diagonale in cui il primo elemento diagonale divide tutti gli altri elementi diagonali.
+
+Qui si applica il ragionamento precedente al blocco $(m-1) \times (n-1)$ in basso a destra di quest'ultima matrice. E cosí via.
+  <div class="qed">∎</div>
+</div>
+
+Usiamo la seguente notazione: se $R$ è un anello (commutativo con identità) e $A \in M_{m,n}(R)$ è una matrice $m \times n$ con entrate in $R$, allora per ogni $i = 1, \dots, \min \{m,n\}$ $I_i(A)$ denota l'ideale di $A$ generato da tutti i minori $i \times i$ di $A$.
+
+<div class="lemma"> <small id="#lemma-3">[3]</small> <p></p>
+ Sia $R$ un anello (commutativo con identità).
+ <p></p>
+ &emsp;  1- 	Se $A \in M_{m,n}(R)$, $M \in M_m(R)$ e $N \in M_n(R)$, allora per ogni $i$ vale $I_i(MAN) \subseteq I_i(A)$.
+ <p></p>
+ &emsp; 2- Se $A \in M_{m,n}(R)$, $M \in \GL_m(R)$ e $N \in \GL_n(R)$, allora per ogni $i$ vale $I_i(MAN) = I_i(A)$.
+
+</div>
+
+<div class="proof">
+ (1) segue dagli sviluppi di Laplace del determinante. (2) segue da (1).
+  <div class="qed">∎</div>
+</div>
+
+<div class="proof">[Dimostrazione dell'unicità della forma normale di Smith]
+Dobbiamo mostrare che su un PID due matrici in forma normale di Smith sono equivalenti se e solo se gli elementi diagonali corrispondanti sono associati. Un'implicazione è ovvia. Dimostriamo l'altra.
+
+Supponiamo che $A \in M_{m,n}(R)$ sia in forma normale di Smith, cioè che sia diagonale e che gli elementi diagonali $d_1, \dots, d_{\min \{ m,n\}}$ sono tali che $(d_1) \supseteq \cdots \supseteq (d_{\min \{ m,n\}})$.
+Si vede facilmente che $I_i(A)$ è l'ideale generato da $\prod_{j=1}^i d_j$.
+Questo conclude la dimostrazione del teorema sulla forma normale di Smith.
+  <div class="qed">∎</div>
+</div>
+
+
+Ora vediamo come il teorema sulla forma normale di Smith possa essere usato per risolvere velocissimamente l'esercizio.
+Sia $A$ la matrice $3 \times 4$ data dall'esercizio.
+Per il teorema sulla forma normale di Smith esistono $d_1, d_2, d_3 \in \NN$ tali che $d_1 \ZZ \supseteq d_2 \ZZ \supseteq d_3 \ZZ$ e la matrice $A$ è equivalente a
+\[
+\begin{pmatrix}
+ d_1 & 0 & 0 & 0 \\
+ 0 & d_2 & 0 & 0 \\
+ 0 & 0 & d_3 & 0
+\end{pmatrix}.
+\]
+Per il Lemma~<a href="#lemma-3">[3]</a> si ha $I_1(A) = \ZZ d_1$, $I_2(A) = \ZZ d_1 d_2$, $I_3(A) = d_1 d_2 d_3$.
+Inoltre $\coker f$ è isomorfo a $\ZZ / d_1 \ZZ \times \ZZ / d_2 \ZZ \times \ZZ / d_3 \ZZ$. Quindi la cardinalità di $\coker f$ è $d_1 d_2 d_3$.
+Calcolando i quattro minori $3 \times 3$ di $A$, si ottiene $I_3(A) = 54 \ZZ$. Quindi
+\[
+| \coker f | = d_1 d_2 d_3 = 54.
+\]
+
+\bigskip
+
+Un corollario immediato della forma normale di Smith è il seguente risultato. (In realtà, basta il Lemma~<a href="#lemma-2">[2]</a>.)
+
+<div class="theorem">[
+ Ogni gruppo abeliano finitamente generato è isomorfo al prodotto diretto di un numero finito di gruppi ciclici.
+</div >
+
+<div class="proof">
+ Sia $G$ un gruppo abeliano finitamente generato.
+ Siano $g_1, \dots, g_m \in G$ dei generatori di $G$.
+ Sia $\phiv \colon \ZZ^m \to G$ l'omomorfismo di gruppi che manda l'$i$-esimo vettore della base canonica in $g_i$.
+ Chiaramente $\phiv$ è suriettivo.
+ Sia $\ker \phiv$ il nucleo di $\ZZ^m$: esso è un sottogruppo di $\ZZ^m$. Quindi $\ker \phiv$ è isomorfo a $\ZZ^n$, per un qualche $n \leq m$.
+ Sia $f \colon \ZZ^n \to \ZZ^m$ l'omomorfismo dato componendo l'isomorfismo $\ker \phiv \sim \ZZ^n$ con l'inclusione $\ker\phiv \into \ZZ^m$.
+ $f$ sarà dato da una certa matrice $A \in M_{m,n}(\ZZ)$.
+ Evidentemente $\im f$ è $\ker \phiv$ e quindi $G$ è isomorfo a $\coker f$.
+ 
+ Per Lemma~<a href="#lemma-2">[2]</a>, possiamo cambiare la base su $\ZZ^m$ e la base su $\ZZ^n$ in modo che $A$ sia diagonale con elementi $d_1, \dots, d_n \in \NN$ (si ricordi che $n \leq m$). Allora $\coker f$ è isomorfo a $\prod_{i=1}^n \ZZ / d_i \ZZ$.
+ Si noti che alcuni dei $d_i$ possono essere nulli.
+  <div class="qed">∎</div>
+</div>
+
+
+
+<small id="footnote-1">[*] Attenzione: la nostra matrice non è quadrata! Tuttavia una matrice, anche non quadrata, si dice "diagonale" se per ogni $i,j$ con $i \neq j$ l'elemento di posto $(i,j)$ è nullo..</small>
+
+
+
+    <div class="link-container">
+        <a href="problema_18.html" class="solution-link">🔙 Torna al giorno 18</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

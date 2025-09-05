@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 22</h1>
+ <h2>Testo</h2>  
+
+
+
+ Sia $k$ un campo algebricamente chiuso. Lavoriamo nel piano proiettivo $\PP^2(k)$.<p></p>
+	
+ Se $C$ è una curva in $\PP^2(k)$ e $p \in \PP^2(k)$ è un punto, allora denotiamo con $m_p(C)$ la <em>molteplicità</em> della curva $C$ nel punto $p$.
+ <p></p>
+ Se $C$ e $D$ sono due curve in $\PP^2(k)$ e $p \in \PP^2(k)$ è un punto, allora denotiamo con $I(C,D,p)$ la <em>molteplicità di intersezione</em> di $C$ e $D$ nel punto $p$. Si vedano le definizioni in <em>Geometria proiettiva</em> di Fortuna, Frigerio, Pardini e in <em>Geometria 1</em> di Sernesi.
+ <p></p>
+ Consideriamo $\PP^2(\CC)$ con coordinate omogenee $x_0, x_1,x_2$. Sia $U_0$ la carta affine $x_0 \neq 0$, con coordinate affini $x = \frac{x_1}{x_0}$ e $y = \frac{x_2}{x_0}$.
+ <p></p>
+     Sia $C$ la curva algebrica in $\PP^2(\CC)$ data dalla chiusura proiettiva della curva algebrica piana affine di equazione $f = x^2 - 4 y^2 + x^3 + 2x y^2 $.
+     <p></p>
+     Sia $D$ la curva algebrica in $\PP^2(\CC)$ data dalla chiusura proiettiva della curva algebrica piana affine di equazione $g = 2x^2 +xy +2x - 5y$.
+
+     <p></p>
+ Si calcoli il numero
+ \[
+ \alpha = \sum_{p \in \PP^2(\CC)} I(C,D,p) \cdot (m_p(C) + m_p(D)).
+ \]
+  <h2>Soluzione 14</h2>  
+ 
+
+
+Si vede subito che se $p \in \PP^2(\CC) \setminus  (C \cap D)$ allora $I(C,D,p) = 0$ e quindi tale punto non contribuisce alla somma.
+Calcoliamo i punti di intersezione tra $C$ e $D$.
+<p></p>
+Preoccupiamoci intanto dei punti di $C \cap D \cap U_0$. Mettiamo a sistema le due equazioni:
+\begin{equation*}
+\left\{  
+\begin{array}{l}
+    (2x-4)y^2 = -x^3 - x^2 \\
+    (x-5)y = -2x^2 - 2x
+\end{array}
+  \right.
+\end{equation*}
+Dalla seconda equazione si ricava $x \neq 5$. Allora dalla seconda equazione si ottiene
+\[
+y = - \frac{2x^2+2x}{x-5}
+\]
+e sostituendo nella prima e eliminando i denominatori
+\[
+0 = (2x^2 + 2x)^2 (2x-4) + (x-5)^2 (x^2 + x^3) = 9 (x^5-x^4-x^3+x^2) = 9x^2 (x-1)^2 (x+1).
+\]
+Da cui si ottiene $x=-1,0,1$ e quindi i punti $(-1,0)$, $(0,0)$ e $(1,1)$, che sono tutti e soli i punti di $C \cap D \cap U_0$.
+<p></p>
+Le equazioni omogenee di $C$ e di $D$ sono rispettivamente
+\begin{align*}
+F = x_0 x_1^2 - 4 x_0 x_2^2 + x_1^3 + 2 x_1 x_2^2, \\
+G = 2 x_1^2 + x_1 x_2 + 2 x_0 x_1 - 5 x_0 x_2.
+\end{align*}
+
+I punti di $C \cap D \cap H_0$ sono dati da imponendo $x_0 =0$ in $F$ e $G$. Si ottiene facilmente che $[0:0:1]$ è l'unico punto di $C \cap D \cap H_0$. Perciò si ottiene
+\[
+C \cap D = \{ [1:0:0], [1:-1:0], , [1:1:1], [0:0:1]  \}.
+\]
+
+Ora per ciascuno dei $4$ punti di $C \cap D$ calcoliamo le molteplicità $m_p(C)$ e $m_p(D)$.
+Ci sono utili le espressioni delle derivate:
+\begin{gather*}
+\frac{\partial f}{\partial x} = 2x + 3x^2 + 2y^2, \\
+\frac{\partial f}{\partial y} = -8y + 4xy, \\
+\frac{\partial g}{\partial x} = 4x +y + 2, \\
+\frac{\partial g}{\partial y} = x-5.
+\end{gather*}
+
+
+\begin{enumerate}
+&emsp;1- Sia $p_1 = [1:0:0]$, che nelle coordinate affini di $U_0$ è $(0,0)$.
+Si vede immediatamente che $m_{p_1}(C)=2$ e $m_{p_1}(D)=1$.
+<p></p>
+&emsp; 2-  Sia $p_2 = [1:-1:0]$, che nelle coordinate affini di $U_0$ è $(-1,0)$.
+Da $\partial_x f (-1,0) = 1 \neq 0$ segue $m_{p_2}(C) = 1$.
+Da $\partial_x g (-1,0) \neq 0$ segue $m_{p_2}(D) = 1$.
+<p></p>
+&emsp; 3- Sia $p_3 = [1:1:1]$, che nelle coordinate affini di $U_0$ è $(1,1)$.
+Da $\partial_x f (1,1) \neq 0$ segue $m_{p_3}(C) = 1$.
+Da $\partial_x g (1,1) \neq 0$ segue $m_{p_2}(D) = 1$.
+<p></p>
+&emsp; 4- Sia $p_4 = [0:0:1]$. Questo punto non sta nella carta $U_0$.
+Deomogeneizziamo $F$ e $G$ rispetto a $x_2$, con $u = \frac{x_0}{x_2}$ e $v = \frac{x_1}{x_2}$, e otteniamo
+\begin{align*}
+     u v^2 - 4 u + v^3 + 2 v, \\
+     2 v^2 + v + 2 uv- 5 u.
+\end{align*}
+Si vede subito $m_{p_4}(C) = m_{p_4}(D) = 1$.
+
+
+<p></p>
+Ora per ciascuno dei $4$ punti di $C \cap D$ dobbiamo calcolare la molteplicità intersezione tra $C$ e $D$.<p></p>
+Purtroppo non possiamo utilizzare immediatamente la definizione perché non è vero che il punto $[0:0:1]$ non sta in $C \cup D$, infatti addirittura sta sia su $C$ che su $D$.
+<p></p>
+Dobbiamo perciò applicare una proiettività $\phiv$ di $\PP^2(\CC)$ tale che
+<p></p>
+&emsp; • $[0:0:1]$ non sta in $\phiv(C \cup D)$, <p></p>
+&emsp; • per ogni $i=1,2,3,4$, $\phiv(p_i)$ è l'unico punto di $\phiv(C \cap D)$ che sta sulla retta che passa per $\phiv(p_i)$ e per $[0:0:1]$.
+<p></p>
+
+
+Sia $\phiv \colon \PP^2(\CC) \to \PP^2(\CC)$ la proiettività data dalla matrice
+\[
+\begin{pmatrix}
+2 & 0 & 0 \\
+0 & 1 & 1 \\
+0 & -1 & 1 \\
+\end{pmatrix}.
+\]
+Allora $\phiv^{-1}$ è la proiettività data dalla matrice 
+\[
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & -1 \\
+0 & 1 & 1 \\
+\end{pmatrix},
+\]
+cioè è l'affinità $U_0 \to U_0$ data da $(x,y) \mapsto (x-y, x+y)$. 
+Si osserva che
+\begin{gather*}
+\phiv(p_1) = [1:0:0], \qquad \phiv(p_2) = [2:-1:1] = [1:-\frac{1}{2}:\frac{1}{2}], \\
+\phiv(p_3) = [1:1:0], \qquad \phiv(p_4) = [0:1:1].
+\end{gather*}
+La curva $\phiv(C)$ ha equazione affine
+\begin{align*}
+\tilde{f}(x,y) &= f(x-y, x+y)  \\
+&= (x-y)^2 - 4 (x+y)^2 + (x-y)^3 + 2(x-y)(x+y)^2 \\
+&= -3 x^2 - 10xy - 3y^2 + 3 x^3 - x^2y + xy^2 - 3y^3
+\end{align*}
+e $\phiv(D)$ ha equazione affine
+\begin{align*}
+\tilde{g} &= g(x-y,x+y) \\
+&= 2 (x-y)^2 + (x-y)(x+y) + 2(x-y) - 5 (x+y) \\
+&= 3x^2 - 4xy + y^2 -3x - 7y.
+\end{align*}
+$\phiv(C)$ ha equazione omogenea
+\begin{align*}
+\tilde{F} &= -3 x_0 x_1^2 - 10 x_0 x_1 x_2 - 3 x_0 x_2^2 + 3 x_1^3 - x_1^2 x_2 + x_1 x_2^2 - 3 x_2^3 \\
+&= -3 x_2^3 + (-3x_0 + x_1) x_2^2 + (-10 x_0 x_1 - x_1^2) x_2 + (-3 x_0 x_1^2 + 3 x_1^3).
+\end{align*}
+$\phiv(D)$ ha equazione omogenea
+\begin{align*}
+\tilde{G} &= 3x_1^2 - 4 x_1 x_2 +  x_2^2 -3 x_0 x_1 - 7 x_0 x_2 \\
+&=  x_2^2 + (-4 x_1 - 7 x_0) x_2 + (3 x_1^2 -3 x_0 x_1).
+\end{align*}
+Si vede che il punto $[0:0:1]$ non sta né su $\phiv(C)$ né su $\phiv(D)$. $\phiv(p) = p = [1:0:0]$.
+La retta che congiunge $\phiv(p_1)=[0:0:1]$ con $[0:0:1]$ è la retta di equazione $x_1 = 0$ e non contiene punti di $\phiv(C\cap D)$ diversi da $\phiv(p_1)$.
+<p></p>
+La retta che congiunge $\phiv(p_2)=[2:-1:1]$ con $[0:0:1]$ è la retta di equazione $x_0 + 2x_1 = 0$ e non contiene punti di $\phiv(C\cap D)$ diversi da $\phiv(p_2)$.
+<p></p>
+La retta che congiunge $\phiv(p_3)=[1:1:0]$ con $[0:0:1]$ è la retta di equazione $x_0-x_1 = 0$ e non contiene punti di $\phiv(C\cap D)$ diversi da $\phiv(p_3)$.
+<p></p>
+La retta che congiunge $\phiv(p_4)=[0:1:1]$ con $[0:0:1]$ è la retta di equazione $x_0= 0$ e non contiene punti di $\phiv(C\cap D)$ diversi da $\phiv(p_4)$.
+<p></p>
+Siamo quindi nelle condizioni per applicare la definizione di molteplicità di intersezione.
+<p></p>
+Sia $R(x_0,x_1) = \mathrm{Ris}(\tilde{F}, \tilde{G}, x_2)$ il risultante di $\tilde{F}$ e $\tilde{G}$ rispetto alla variabile $x_2$; esso è il determinante della matrice
+\[
+\begin{pmatrix}
+-3 & (-3x_0 + x_1) & (-10 x_0 x_1 - x_1^2) & (-3 x_0 x_1^2 + 3 x_1^3) & 0  \\
+0 & -3 & (-3x_0 + x_1) & (-10 x_0 x_1 - x_1^2) & (-3 x_0 x_1^2 + 3 x_1^3) \\
+1 & (-4 x_1 - 7 x_0) & (3x_1^2 -3 x_0 x_1) & 0 & 0 \\
+0& 1 & (-4 x_1 - 7 x_0) & (3x_1^2 -3 x_0 x_1) & 0 \\
+0 & 0 & 1 & (-4 x_1 - 7 x_0) & (3x_1^2 -3 x_0 x_1)
+\end{pmatrix}.
+\]
+Si calcola
+\begin{align*}
+R &= -1728 x_0 x_1^5 + 2592 x_0^2 x_1^4 - 864 x_0^4 x_1^2 \\
+&= -864 x_0 x_1^2 (2x_1^3 - 3 x_0 x_1^2 + x_0^3) \\
+&= -864 x_0 x_1^2 (x_1 - x_0)^2 (2x_1 + x_0).
+\end{align*}
+Possiamo deomogeneizzare $R$:
+\[
+r = -864 x^2 (x- 1)^2 (2x + 1).
+\]
+
+&emsp; 1- La molteplicità di intersezione tra $\phiv(C)$ e $\phiv(D)$ in $\phiv(p_1) = [1:0:0]$ è la molteplicità con cui $[1:0]$ è radice di $R$ (cioè la molteplicità con cui $0$ è radice di $r$), cioè $2$. Poiché la molteplicità di intersezione è invariante per proiettività si ottiene $I(C,D,p_1) = I(\phiv(C),\phiv(D),\phiv(p_1)) = 2$.
+<p></p>
+&emsp; 2- La molteplicità di intersezione tra $\phiv(C)$ e $\phiv(D)$ in $\phiv(p_2) = [1:-1/2:1/2]$ è la molteplicità con cui $-1/2$ è radice di $r$, cioè $1$. Perciò, di nuovo per l'invarianza della molteplicità di intersezione per proiettività, si ottiene $I(C,D,p_2)=1$.
+<p></p>
+&emsp;3- La molteplicità di intersezione tra $\phiv(C)$ e $\phiv(D)$ in $\phiv(p_3) = [1:1:0]$ è la molteplicità con cui $1$ è radice di $r$, cioè $2$. Perciò $I(C,D,p_3) = 2$.
+<p></p>
+&emsp;4- La molteplicità di intersezione tra $\phiv(C)$ e $\phiv(D)$ in $\phiv(p_4) = [0:1:1]$ è la molteplicità con cui $[0:1]$ è radice di $R$, cioè $1$. Perciò $I(C,D,p_4) = 1$.
+<p></p>
+Per cui il numero voluto è
+\[
+\al = 2 \cdot (2+1) + 1 \cdot (1+1) + 2 \cdot (1+1) + 1 \cdot (1+1) = 6+2+4+2 = 14.
+\]
+<p></p>>
+
+Ora vediamo un paio di altri modi per calcolare la molteplicità di intersezione tra le curve $C$ e $D$.
+<p></p>
+
+&emsp; • Poiché il punto $p_1$ è l'origine della carta affine $U_0$, la molteplicità di intersezione $I(C,D,p_1)$ è calcolare la dimensione di $A = \CC \pow{x,y} / (f,g)$ come $\CC$-spazio vettoriale.
+Si ricordi che $x-5$ è invertibile in $\CC \pow{ x,y }$, quindi l'ideale $(f,g) \subseteq \CC \pow{x,y}$ coincide con l'ideale generato da
+$y + (2x^2 + 2x)(x-5)^{-1}$ e da 
+\[
+(2x-4) \frac{(2x^2 + 2x)^2}{(x-5)^2} + x^3 + x^2 = \frac{9}{25} x^2 + \text{ termini di ordine piú alto}.
+\]
+Ovvero $(f,g)$ coincide con l'ideale generato da $x^2$ e da
+\[
+y - \frac{2}{5}x.
+\]
+Quindi la $\CC$-algebra $A = \CC \pow{x,y} / (f,g)$ è isomorfa, come $\CC$-algebra, a $\CC\pow{x} / (x^2)$, che ha dimensione $2$ come $\CC$-spazio vettoriale. Perciò si ha $I(C,D,p_1) = 2$.
+<p></p>
+(Questo metodo può essere applicato a qualsiasi punto: basta infatti traslare per ottenere che il punto che stiamo considerando sia l'origine.)
+<p></p>
+&emsp; • Si consideri il punto $p_2 = [1:-1:0]$. Abbiamo già visto che esso è un punto liscio sia per $C$ che per $D$. Calcoliamo le rette tangenti.
+<p></p>
+Poiché $\partial_x f (-1,0) = 1$ e $\partial_y f (-1,0) = 0$, si ha che $T_{p_2}C$ è la retta di equazione $x+1 = 0$.
+<p></p>
+Poiché $\partial_x g (-1,0) = -2$ e $\partial_y g (-1,0) = -6$, si ha che $T_{p_2}D$ è la retta di equazione $-2(x+1) -6y =0$.
+<p></p>
+Quindi $T_{p_2}C$ e $T_{p_2}D$ sono rette distinte.
+<p></p>
+Per Esercizio~3.57 in <em>Geometria proiettiva</em> di Fortuna, Frigerio, Pardini si ottiene $I(C,D,p_2) = 1$.
+<p></p>
+
+&emsp; • Analogamente a quanto fatto appena sopra, poiché $p_4 = [0:0:1]$ è liscio sia per $C$ che per $D$ e poiché le due rette tangenti a $C$ e a $D$ in $p_4$ sono distinte, si ottiene $I(C,D,p_4)=1$.
+<p></p>
+Resta da determinare $I(C,D,p_3)$. Si può osservare le due curve $C$ e $D$ hanno la stessa retta tangente in $p_3 = (1,1)$. Per Esercizio~3.57 in <em>Geometria proiettiva</em> di Fortuna, Frigerio, Pardini si ottiene $I(C,D,p_3) \geq 2$. Si può dimostrare che vale l'uguaglianza sfruttando il teorema di Bezout
+\[
+\sum_{i=1}^4 I(C,D,p_i) = 2 \cdot 3 = 6.
+\]
+
+
+
+
+Potete divertirvi a usare il software <a href="https://www.geogebra.org/classic?lang=it">GeoGebra</a> inserendo le due equazioni $f$ e $g$ per avere un'idea del luogo reale delle curve $C$ e $D$.
+
+
+
+
+
+
+
+
+    <div class="link-container">
+        <a href="problema_22.html" class="solution-link">🔙 Torna al giorno 22 </a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

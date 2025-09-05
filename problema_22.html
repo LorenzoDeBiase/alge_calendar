@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno  22</title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 22 </h1>
+
+ 
+Entrate nel covo dell'Organizzazione per ritrovarvi direttamente di fronte ai volti minacciosi di Bur, Ba e Ki che grugniscono cercando di acciuffarvi.
+<p></p>
+Sapete che non è il momento per ulteriori domande, bisognerebbe solo ringraziare lo speaker ed andare a mangiare i biscotti del coffee break, ma non potete resistere alla tentazione.
+<p></p>
+"Perché non parlano, chiedi? Beh evidentementemente è una scelta stilistica degli autori di questa storia. 
+Sono di fatto degli sgherri generici e la loro rappresentazione sulla scena non ha bisogno di un carattere particolare.
+Ma fatti indietro ora, ci penso io a loro!"
+<p></p>
+Il buon Iski inzia a muovere la braccia con fare ieratico pronunciando un sortilegio magico:
+
+"Io evoco l'antico potere dell'Assioma della Scelta!!! PIOGGIA DI BANACH-TARSKI!"
+<p></p>
+
+Dalle mani del folletto viene sparata una pioggia di scintille verso i manigoldi.
+Per ogni scintilla che colpisce un manigoldo, questo si sdoppia in due copie di se stesso che iniziano a litigare tra loro dandosele di santa ragione.
+<p></p>
+Sembrerebbe una vittoria a Manin basse.
+<p></p>
+
+La cosa però sfugge velocemente di mano tra copie di copie di copie e nella confusione occorre sapere quale è il numero preciso di coppie di sgherri al termine del sortilegio.
+
+<p></p>
+
+
+
+	Sia $k$ un campo algebricamente chiuso. Lavoriamo nel piano proiettivo $\PP^2(k)$.<p></p>
+	
+    Se $C$ è una curva in $\PP^2(k)$ e $p \in \PP^2(k)$ è un punto, allora denotiamo con $m_p(C)$ la <em>molteplicità</em> della curva $C$ nel punto $p$.
+	<p></p>
+    Se $C$ e $D$ sono due curve in $\PP^2(k)$ e $p \in \PP^2(k)$ è un punto, allora denotiamo con $I(C,D,p)$ la <em>molteplicità di intersezione</em> di $C$ e $D$ nel punto $p$. Si vedano le definizioni in <em>Geometria proiettiva</em> di Fortuna, Frigerio, Pardini e in <em>Geometria 1</em> di Sernesi.
+	<p></p>
+	Consideriamo $\PP^2(\CC)$ con coordinate omogenee $x_0, x_1,x_2$. Sia $U_0$ la carta affine $x_0 \neq 0$, con coordinate affini $x = \frac{x_1}{x_0}$ e $y = \frac{x_2}{x_0}$.
+	<p></p>
+		Sia $C$ la curva algebrica in $\PP^2(\CC)$ data dalla chiusura proiettiva della curva algebrica piana affine di equazione $f = x^2 - 4 y^2 + x^3 + 2x y^2 $.
+        <p></p>
+        Sia $D$ la curva algebrica in $\PP^2(\CC)$ data dalla chiusura proiettiva della curva algebrica piana affine di equazione $g = 2x^2 +xy +2x - 5y$.
+
+        <p></p>
+	Si calcoli il numero
+	\[
+	\alpha = \sum_{p \in \PP^2(\CC)} I(C,D,p) \cdot (m_p(C) + m_p(D)).
+	\]
+	
+
+   
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_22.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 14; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/math-env.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 15 </h1>
+ <h2>Testo</h2>  
+
+ Per ogni numero primo $p$ si consideri il campo $\overline{\FF_p}$, che è la chiusura algebrica di $\FF_p = \ZZ / p \ZZ$, e si consideri la curva algebrica piana $X_p \subset \PP^2(\overline{\FF_p})$ definita dall'equazione
+ \[
+ x_0 x_2^2 - \left( x_1^3 + 2 x_0^2 x_1 + 2x_0^3  \right) = 0.
+ \]
+ Si determini il prodotto dei primi $p$ tali che $X_p$ non è liscia.
+
+
+
+ <h2>Soluzione: 70 </h2>  
+
+
+Bisogna dimostrare che i primi $p$ tali che $X_p$ non è liscia sono esattamente $2$, $5$ e $7$.
+<p></p>
+
+Poniamo $F = x_0 x_2^2 - \left( x_1^3 + 2 x_0^2 x_1 + 2x_0^3  \right) \in \overline{\FF_p}[x_0,x_1,x_2]_3$. Il gradiente di $F$ è
+\[
+\nabla F = \begin{pmatrix}
+ x_2^2 - (4x_0 x_1 + 6 x_0^2) \\
+ - (3 x_1^2 + 2 x_0^2) \\
+ 2 x_0 x_2
+\end{pmatrix}
+\]
+
+La curva $X_2$ è definita dall'equazione $x_0 x_2^2 - x_1^3 = 0$; si verifica che è singolare nel punto $[1:0:0]$.
+<p></p>
+
+D'ora in avanti si suppone $p > 2$. Vogliamo mostrare la coimplicazione
+\[
+X_p \text{ è singolare } \Leftrightarrow \ p = 5 \text{ o } p = 7.
+\]
+Iniziamo col dimostrare l'implicazione $\Rightarrow$.
+Supponiamo per assurdo $X_p$ sia singolare e vogliamo dimostrare $p = 5$ o $p=7$. Si vede che $[0:0:1]$ è l'unico punto di $X_p$ che non sta nella carta affine $U_0$, infatti la cubica $X_p$ interseca la retta $H_0 = \rV_\PP(x_0)$ nel punto $[0:0:1]$ con molteplicità $3$. Inoltre si vede che $\frac{\partial F}{\partial x_0}$ non si annulla nel punto $[0:0:1]$, perciò tale punto è liscio per $X_p$. Quindi la curva affine $X_p \cap U_0$ deve essere singolare.
+Allora deomogeneizziamo $F$ rispetto a $x_0$ e otteniamo il polinomio
+\[
+f = y^2 - (x^3 + 2x +2) \in \overline{\FF_p}[x,y]
+\]
+che è l'equazione della curva affine $X_p \cap U_0$. Poiché questa curva è singolare, devono esistere $a,b \in \overline{\FF_p}$ che annullano simultaneamente $f$, $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, ovvero tali che
+\[
+\left\{ 
+\begin{array}{l}
+b^2 = a^3 + 2 a + 2 \\ 3a^2 + 2 = 0 \\ 2b = 0
+\end{array}
+\right.
+\]
+Poiché $p \neq 2$, si deve avere $b=0$ e quindi sostituendo nella prima equazione si ottiene che esiste $a \in \overline{\FF_p}$ tale che $a^3 + 2 a + 2 = 0$ e $3 a^2 + 2 = 0$.
+Da
+\[
+0 = 3(a^3 + 2a+2) - a(3a^2+2) = 4a + 6 = 2(2a+3)
+\]
+si evince, poiché $p \neq 2$, che deve essere $a=-\frac{3}{2}$. Ma allora
+\[
+0 = 3a^2 +2 = 3\frac{9}{4}+2 = \frac{35}{4} \text{ in } \overline{\FF_p}.
+\]
+Questo implica $p \vert 35$ e quindi $p=5$ o $p=7$.
+<p></p>
+
+Ora dimostriamo l'implicazione $\Leftarrow$.
+Bisogna far vedere che $X_5$ e $X_7$ sono singolari.
+Usiamo quanto fatto in precedenza. In $\FF_5$ $-\frac{3}{2} = 1$, quindi si verifica che $X_5$ è singolare nel punto $[1:1:0]$.
+In $\FF_7$ $-\frac{3}{2} = -3 \cdot 4 = 2$, quindi si verifica che $X_7$ è singolare nel punto $[1:2:0]$.
+Questo conclude la soluzione dell'esercizio.
+<p></p>
+
+
+Sarebbe stato molto piú veloce usare il seguente risultato:
+
+
+<div class="theorem"><b>[Forma di Weierstrass]</b> <p></p>
+ Sia $k$ un campo algebricamente chiuso, siano $a,b \in k$ e sia $X \subset \PP^2(k)$ la curva algebrica piana proiettiva data dalla chiusura proiettiva della curva algebrica piana affine data dall'equazione
+ \[
+ y^2 - (x^3 + ax + b) = 0.
+ \]
+ Si ponga $\Delta = 4 a^3 + 27 b^2 \in k$.
+ Allora:<p></p>
+ 
+ &emsp;  • se $\car k = 2$, allora $X$ è singolare;<p></p>
+ &emsp;  • se $\car k \neq 2$, allora vale
+     \[
+     X \text{ è liscia } \Leftrightarrow \ \Delta \neq 0.
+     \]
+ 
+</div>
+
+Per una dimostrazione si veda Esercizio~3.33 in Fortuna, Frigerio, Pardini, <em>Geometria proiettiva</em>.
+
+Nel nostro caso $k = \overline{\FF_p}$, $a = b =2$ e quindi $\Delta = 4 \cdot 8 + 27 \cdot 4 = 4 \cdot 35$.
+
+
+
+
+    <div class="link-container">
+        <a href="problema_15.html" class="solution-link">🔙 Torna al giorno 15</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

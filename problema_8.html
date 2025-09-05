@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno  8</title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 8</h1>
+
+    L'atlante ha funzionato! La stradina che avete preso vi ha fatto arrivare proprio alle spalle del vostro inseguito!
+<p></p>
+    Lo strambo ladro vestito di grigio imbocca un minuscolo vicolo innevato. 
+    
+    Arrivate nella grande Autopiazza dei Valori dove troneggia un enorme abete in fase di allestimento.
+    <p></p>    
+    Il soprabito grigio dello strano ladro sembra esplodere, lanciando lungo direzioni eccezionali quelli che erano tre piccoli folletti contenuti al suo interno.
+    
+    Anche voi non vi sentite particolarmente integri e cercate di verificare che avete tutto in ordine.
+    <p></p>
+    Per contare le vostre ferite, vi basta risolvere un semplice quesito:
+   
+    <p></p>
+    
+    
+    Si consideri la conica piana $C \subset \PP^2$, $C= V(\frac{x_0^2}{2}+ 2x_1^2-\frac{x_2^2}{2})$. Ricordiamo che la retta tangente $l_p$ a $C=V(f)$ in $p$ è data da $$l_p= V\left(\frac{\partial f}{\partial x_0}(p)x_0 +\frac{\partial f}{\partial x_1}(p)x_1+ \frac{\partial f}{\partial x_2}(p)x_2\right)\subset \PP^2.$$
+    Definiamo un morfismo \[
+    \phi: C \to (\PP^2)^{\vee}, \ \ \phi(p) \mapsto l_p.
+    \]
+    Si denoti con $C^{\vee}= \phi(C)$. Si può far vedere che $C^{\vee}$ è anch'essa una curva piana, i.e. $C^{\vee}= V(f^{\vee})$. Si consideri $a_{i,d}$, definito come il coefficiente del monomio $x_i^d$ in $f^{\vee}$. Si determini
+    \[D= \prod_{i=0}^2 a_{i,d},\]
+    con la normalizzazione $a_{0,d}=2$.
+    
+    
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_8.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = -2; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

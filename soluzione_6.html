@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 6</h1>
+ <h2>Testo</h2>  
+
+ Sia $V_6$ uno spazio vettoriale complesso di dimensione 6, e $q_1, q_2$ due forme quadratiche di rango massimo. Per un qualsiasi $[\lambda, \mu] \in \PP^1$, si consideri
+ \[
+ Q_{\lambda, \mu}:= V(\lambda q_1 + \mu q_2 ) \subset \PP(V_6)
+ \]
+ Consideriamo ora il luogo $S\subset \PP^1$ definito da
+ \[
+ S := \{ [\lambda: \mu] \in \PP^1 \ | \ \textrm{sing}(Q_{\lambda, \mu}) \neq 0 \}
+ \]
+ Dopo aver dimostrato che $S$ è Zariski-chiuso in $\PP^1$, determinarne il grado.
+
+ <h2>Soluzione: 6</h2>  
+ 
+
+
+
+ Sappiamo dall'algebra lineare che $q_1, q_2$ sono simultaneamente diagonalizzabili, e in particolare (a meno di cambiare base) possiamo scriverle come
+ \[
+ q_1= \sum_{i=1}^6 x_i^2; \ q_2 = \sum_{i=1}^6 \alpha_ix_i^2
+ \]
+ con gli $\alpha_i$ tutti distinti. Ovviamente anche $Q_{\lambda,\mu}$ è lo zero di una forma quadratica $q_{\lambda, \mu}$, e possiamo scrivere la sua matrice associata come
+ \[
+ q_{\lambda, \mu}= \begin{pmatrix}
+     \lambda + \mu \alpha_1 & 0 &0 & \ldots & 0 \\
+     0 & \lambda +\mu \alpha_2 & 0 & \ldots & 0 \\
+     \ldots & \ldots & \ldots & \ldots & \ldots \\
+     \ldots & \ldots & \ldots & \ldots & \lambda + \mu \alpha_6
+ \end{pmatrix}
+ \]
+ Consideriamo ora la quadrica associata $Q_{\lambda, \mu} \subset \PP^5$: si vede facilmente (per esempio, andando a calcolare il luogo di simultaneo annullamento delle derivate parziali), che il luogo singolare di $Q_{\lambda, \mu}$ coincide esattamente con il luogo dove la matrice $q_{\lambda, \mu}$ perde rango. Questo avviene esattamente quando una (e in effetti esattamente una) delle entrate sulla diagonale di  $q_{\lambda, \mu}$ si annulla. Si ha dunque che $S$ è composto da 6 
+ punti (genericamente distinti), da cui la risposta.
+     
+ 
+
+
+    <div class="link-container">
+        <a href="problema_6.html" class="solution-link">🔙 Torna al giorno 6</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 7 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 7</h1>
+
+
+    Finalmente in piedi, cercate di riacciuffare il tizio vestito di grigio che vi ha sottratto la scatola di Klein.
+    <p>
+    </p> 
+    Lo seguite con lo sguardo per non perderlo ed iniziate la vostra corsa verso di lui zigzagando tra la folla intenta a fare compere di Natale. 
+    <p>
+    </p> 
+    Non potete fare a meno di notare come il vostro inseguito corra in maniera sconclusionata, come se invece di essere un unico individuo irriducibile fosse unione di più individui.
+    <p>
+    </p> 
+    Forse potreste prendere una scorciatoia e tagliargli la strada al prossimo incrocio.
+    Per trovare quella esatta estraete dalla tasca del palandrano l'atlante di tutti i luoghi che esistono e non esistono. 
+    <p>
+    </p> 
+    A quale pagina è la strada in cui siamo? Facilissimo, ci basta seguire quello che dice l'indice!
+    <p>
+    </p> 
+    
+     Se $k$ è un campo, $V$ un $k$-spazio vettoriale di dimensione finita e $r$ è un numero intero non-negativo, allora la <em>Grassmanniana</em> degli $r$-piani di $V$ è l'insieme dei sottospazi vettoriali di $V$ di dimensione $r$ e si denota con $\mathrm{Gr}(r,V)$.
+     <p>
+    </p> 
+     Si calcoli la cardinalità dell'insieme $\mathrm{Gr}(3,V)$ quando $k = \FF_7$ è il campo con $7$ elementi e $V = (\FF_7)^5$ è lo spazio vettoriale standard su $\FF_7$ di dimensione $5$.
+
+    
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_7.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 140050; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

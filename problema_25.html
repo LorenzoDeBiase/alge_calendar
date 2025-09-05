@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 25 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno  25</h1>
+
+
+    BEN FATTO! Giorni e giorni passati a risolvere esercizi vi hanno reso restistenti agli attacchi del colbacco!
+
+    <p></p>
+    Vi avvicinate ad Iski mettendolo di fronte alla sua immagine attraverso lo specchio.
+    <p></p>
+    
+    Immediatamente vedete i suoi occhi illuminarsi.
+    
+    Ogni sua fibra del corpo, ogni suo nervo inizia a sprigionare energia nel formulare una frase che viene emessa dalla sua bocca sotto forma di ruggito:
+    
+    <p></p>
+    "IL MIO NOME È ISKI E SONO IO IL CAPO DEL PUNTO CHE OCCUPO ISTANTE PER ISTANTE!"
+    <p></p>
+    La luce del colbacco viene spenta di colpo dalle parole del folletto.
+    Pochi secondi dopo il copricapo si sgretola di fronte ai vostri occhi increduli.
+    <p></p>
+    
+    Il CAPellaio, vista la mala parata si affretta a scappare via attraverso un portale topologico.
+    
+    <p></p>
+    Cercate di acciuffarlo ma non riuscite a fare in tempo.
+    <p></p>
+    "Non ti preoccupare, abbiamo già quello che ci serve" dice Iski avvicinandosi al tavolo, aprendo il forziere e prendendo la gemma con entrambe le mani:
+    <p></p>
+    "Eccolo il diamante di Hodge! Esso custodisce la luce del Natale! Andiamo a rimetterlo nel luogo in cui deve stare."
+    <p></p>
+    Preso un portale arrivate alla Autopiazza dei Valori, il centro pulsante di Diagon Ale.
+    
+    Una folla festosa è radunata sotto il grande albero di Abete posto al centro della piazza.
+    
+    Questo è tutto addobbato con luci, sfere colorate e funtori festivi.
+    <p></p>
+    Manca solo il puntale.
+    <p></p>
+    Iski vi consegna sorridente il diamante di Hodge dicendovi con dolcezza: "Vallo a mettere tu in cima!"
+    
+    <p></p>
+    Vi arrampicate su per l'albero con tutta la gente che vi incoraggia piena di gioia.
+    
+    <p></p>
+    Ecco fatto! Proprio in cima!
+    
+    Ora bisogna solo accenderlo.
+    <p></p>
+   
+    Calcolare i numeri di Hodge $h^{p,q}(X)$ di una ipersuperficie quintica liscia $X$ nello spazio proiettivo 4 dimensionale $\PP^4$, e sommate solamente quelli con $p+q$ dispari.
+    <p></p>
+    <em>Suggerimento: derivate! </em>
+    
+    <p></p>
+    
+    Una luce calda si sparge dalla cima del puntale di Hodge andando a rivestire tutta la Autopiazza.
+    
+    <p></p>
+    Sentite che state per tornare a casa trasportati dalla connessione al vostro mondo, mentre scambiate un ultimo sorriso di intesa con Iski.
+    
+    <p></p>
+    Tutto il vortice di festività intorno a voi profuma di sere d'infazia trascorse ad aspettare il Natale e a mangiare i cioccolatini di un calendario dell'avvento.
+    
+    
+
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_25.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 204; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

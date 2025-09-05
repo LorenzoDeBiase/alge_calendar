@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="css/math-env.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 9</h1>
+ <h2>Testo</h2>  
+
+
+ Lavoriamo su un campo algebricamente chiuso di caratteristica zero, denotato con $k$.<p></p>
+ Se $X$ è una curva algebrica in $\PP^2(k)$, allora un punto $p \in \PP^2(k)$ si dice un <em>flesso</em> per $X$ se valgono le seguenti condizioni:
+ <p></p>
+ 
+ &emsp; • $p$ è un punto liscio di $X$,
+ <p></p>
+ 
+ &emsp; • la molteplicità di intersezione in $p$ tra la curva $X$ e la retta tangente di $p$ in $X$ è almeno $3$, cioè $I(X, T_p X, p) \geq 3$.
+ <p></p>
+ Si determini il numero di flessi della curva $X \subset \PP^2(k)$ definita dall'equazione
+ \[
+ x_0^6 + x_1^6 + x_2^6 = 0.
+ \]
+ 
+
+
+ <h2>Soluzione: 18 </h2>  
+ 
+
+
+
+ 
+ 
+ Sia $k$ un campo e sia $d \geq 1$ un intero.
+ Se $F \in k[x_0, x_1, x_2]_d$ un polinomio omogeneo di grado $d$, allora
+<p></p>
+ &emsp; •  il <em>gradiente</em> di $F$ è la terna di polinomi omogenei di grado $d-1$ data da 
+     \[
+     \nabla F = \left( \frac{\partial F}{\partial x_0}, \frac{\partial F}{\partial x_1}, \frac{\partial F}{\partial x_2} \right);
+     \]
+
+     &emsp; •  la  <em>matrice hessiana</em> di $F$ è la matrice $3 \times 3$ costituita dai polinomi omogenei di grado $d-2$ date dalle derivate seconde di $F$:
+     \[
+     \mathrm{Hess}_F = \left( \frac{\partial^2 F}{\partial x_i \partial x_j}  \right)_{0 \leq i, j \leq 2};
+     \]
+     &emsp; •  il <em>polinomio hessiano</em>  di $F$ è il determinante della matrice hessiana di $F$: $H_F = \det \mathrm{Hess}_F$; è un polinomio omogeneo di grado $3(d-2)$.
+     <p></p>
+     Per l'identità di Eulero, se $x = \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} $ valgono le uguaglianze
+     \begin{gather*}
+         ^t \! x \cdot \nabla F = d F, \\
+         \mathrm{Hess}_F \cdot x = (d-1) \nabla F, \\
+         ^t \! x \cdot \mathrm{Hess}_F \cdot x = d(d-1) F.
+     \end{gather*}
+     
+     <div class="theorem">
+         Sia $k$ un campo algebricamente chiuso di caratteristica $0$. Sia $d \geq 3$ un intero e sia $F \in k[x_0,x_1,x_2]_d$ un polinomio omogeneo di grado $d$.
+         Sia $p \in \PP^2(k)$ un punto.
+         Allora le seguenti due affermazioni sono equivalenti:
+         <p></p>
+         &emsp; 1-  $p \in \rV_\PP(F) \cap \rV_\PP(H_F)$,
+         <p></p>
+         &emsp; 2-   $p$ è un punto singolare per $F$ o è un punto di flesso per $F$.
+     
+        </div>
+     
+     Per una dimostrazione si veda Proposizione~34.8 in Edoardo Sernesi, <em>Geometria 1</em>, seconda edizione.
+     
+     Nel nostro caso $F = x_0^6 + x_1^6 + x_2^6$ e $X = \rV_\PP(F)$. È facile verificare che $X$ è liscia.  Quindi $H_F = 6^3 (x_0 x_1 x_2)^4$. Consideriamo il ridotto di $F$, $G = x_0x_1x_2$, di modo che $\rV_\PP(H_F) = \rV_\PP(G)$. È facile verificare che $X$ e $\rV_\PP(G)$ si intersecano in esattamente $18$ punti. Questi $18$ punti sono i flessi di $X$, applicando il teorema e il fatto che $X$ è liscia.
+     
+ 
+ 
+ 
+ 
+
+
+    <div class="link-container">
+        <a href="problema_9.html" class="solution-link">🔙 Torna al giorno 9</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

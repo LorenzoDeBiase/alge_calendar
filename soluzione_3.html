@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione  3</title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 3</h1>
+ <h2>Testo</h2>  
+
+ Sia $\FF_{31} = \ZZ / 31 \ZZ$ il campo con $31$ elementi.
+ Sia $\overline{\FF_{31}}$ la chiusura algebrica di $\FF_{31}$.
+ Sia $k = \overline{\FF_{31}}(z)$ il campo delle funzioni razionali su $\overline{\FF_{31}}$ nell'indeterminata $z$.
+ Sia $\rM_{12}(k)$ l'insieme delle matrici quadrate $12 \times 12$ con entrate in $k$.
+ Sia $I \in \rM_{12}(k)$ la matrice identit\`a.
+ Si consideri l'insieme
+ \[
+ W = \{  A \in \rM_{12}(k) \mid (A-I)^3 = 0  \}.
+ \]
+ Su $W$ si consideri la relazione di equivalenza $\sim$ data da: per ogni $A,B \in W$
+ \[
+ A \sim B \quad \Leftrightarrow \quad \exists M \in \GL_{12}(k) : B = M^{-1}AM.
+ \]
+ Si determini la cardinalit\`a dell'insieme quoziente $Y := W / \! \sim$.
+
+ <h2>Soluzione: 19 </h2>  
+ 
+
+
+
+
+La relazione $\sim$ è la relazione di similitudine che si studia in algebra lineare.
+ Inoltre, l'insieme $W$ può essere caratterizzato cosí: è l'insieme delle matrici $A \in \rM_{12}(k)$ tali che il polinomio minimo $m_A(t)$ divide il polinomio $(t-1)^3$.
+
+ <p>
+</p> 
+Poiché il polinomio $(t-1)^3$ ha tutte le radici in $k$, si ha che per ogni $A \in W$ il polinomio minimo $m_A$ di $A$ ha tutte le radici in $k$. Quindi ogni $A \in W$ è triangolarizzabile e quindi è simile a una matrice in forma di Jordan.
+Perciò dobbiamo contare le forme di Jordan di matrici $12 \times 12$ con autovalore $1$ e che abbiano polinomio minimo che divide $(t-1)^3$, cioè dobbiamo richiedere che i blocchi di Jordan abbiano taglia $\leq 3$.
+<p>
+</p> 
+Quindi $Y$ è in bigezione con l'insieme delle partizioni $(\lambda_1, \dots, \lambda_r)$ di $12$ tali che $1 \leq \lambda_1 \leq \cdots \leq \lambda_r \leq 3$. Queste sono
+$1^{12}$,
+$1^{10}2^1$,
+$1^9 3^1$,
+$1^8 2^2$,
+$1^7 2^1 3^1$,
+$1^6 2^3$, $1^6 3^2$,
+$1^5 2^2 3^1$,
+$1^4 2^4$, $1^4 2^1 3^2$,
+$1^3 2^3 3^1$, $1^3 3^3$,
+$1^2 2^5$, $1^2 2^2 3^2$,
+$1^1 2^4 3^1$, $1^1 2^1 3^3$,
+$2^6$, $2^3 3^2$, $3^4$.
+Il loro numero è $19$.
+<p>
+</p> 
+Si noti che in questo esercizio la scelta del campo  è ininfluente.
+
+
+
+
+
+
+
+
+    <div class="link-container">
+        <a href="problema_3.html" class="solution-link">🔙 Torna al giorno 3</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 21</h1>
+ <h2>Testo</h2>  
+
+
+ Si consideri $C=V(F) \subset \PP^1 \times \PP^1$, con $F$ un polinomio biomogeneo generico di grado $(2,3)$ - si può dunque assumere che $C$ sia liscia. In altre parole $F \in \CC[x_0, x_1]_2 \otimes \CC[y_0, y_1]_3$, dove $x_i, y_i$ denotano le coordinate (duali) sulle due copie di $\PP^1$.
+
+ Consideriamo $$\pi_2|_C: C \to \PP^1,$$ la restrizione a $C$ della seconda proiezione naturale $\pi_2: \PP^1 \times \PP^1 \to \PP^1$. Dopo aver verificato come $\pi_2|_C$ dia (genericamente) luogo a un rivestimento doppio, si determini la cardinalità del \emph{luogo di ramificazione} $\Delta \subset \PP^1$, ovvero \[
+ \Delta:= \{ p \in \PP^1 \ | \ \pi_2|_C^{-1}(p)=\{q\}\}
+ \]
+ 
+ Determinare infine $$D= |\Delta| g(C),$$
+ con $g(C)$ a denotare il genere di $C$.
+
+
+ <h2>Soluzione: 12 </h2>  
+ 
+
+
+Senza perdere di generalità, possiamo scrivere l'equazione di $F$ come
+\[
+F=y_0^2 c_0(x_0, x_1) + y_0y_1 c_1(x_0, x_1)+ y_1^2 c_2(x_0, x_1)
+\]
+con le $c_i(x_0, x_1)$ forme cubiche. Analizzando la proiezione sulla seconda copia di $\PP^1$, per ogni $p \in \PP^1$ avremo che la fibra sarà descritta da
+\[
+\pi_2|_C^{-1}(p) = V( y_0^2 \alpha_0 + y_0y_1 \alpha_1+ y_1^2\alpha_2) \subset \PP^1
+\]
+con $\alpha_i:= (c_i(x_0, x_1))(p)$.
+Il luogo degli zeri dell'equazione precedente corrisponde genericamente a due punti distinti, con l'eccezione di quando il discriminante $\alpha_1^2-4\alpha_0\alpha_2=0$.
+
+<p></p>
+Il luogo discriminante $\Delta \subset \PP^1$ è dunque descritto dall'equazione
+\[
+\Delta= V(c_1(x_0, x_1)^2-4 c_0(x_0, x_1)c_2(x_0, x_1) \subset \PP^1,
+\]
+che è un'equazione di grado 6. Grazie alla condizione di genericità, i sei punti sono distinti, e dunque $|\Delta|=6$. 
+<p></p>
+Infine, basta determinare il genere di $C$. Un modo facile per farlo è utilizzare la formula di <em>Riemann-Hurwitz</em>, che nel caso di rivestimento doppio con ramificazione diventa: \[
+-2g(C)+2 = 2(-2g(\PP^1)+2) - |\Delta|
+\]
+Si ha dunque
+\[
+g(C)= -\left(\frac{4- 6-2}{2}\right) =2,
+\]
+da cui $D=12$.
+
+
+
+
+    <div class="link-container">
+        <a href="problema_21.html" class="solution-link">🔙 Torna al giorno 21</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

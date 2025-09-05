@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 24</h1>
+ <h2>Testo</h2>  
+
+    
+    
+ Si consideri $X=V(F) \subset \PP(\KK^3)$ con
+ \[
+ F=x_0^3x_1+x_1^3x_2+x_2^3x_0;
+ \]
+ Si consideri il numero di flessi $f_{\KK}$ di $X$, ovvero i punti $p \in X$ che annullano il determinante dell'Hessiana di $F$ con coordinate in $\PP(\KK^3)$.
+ <p></p>
+ Siano ora
+ \[
+ \KK_1:= \QQ; \ \KK_2:= \QQ(\zeta_5); \ \KK_3:=  \QQ(\zeta_7);
+ \]
+ 
+ dove con $\QQ(\zeta_n)$ si denota l'n-esimo campo ciclotomico. Determinare
+ \[
+ P:= \prod_{i=1}^3 f_{\KK_i}.
+ \]
+ 
+ <em>Suggerimento: può essere conveniente usare un software di computer algebra. Per esempio, una versione online di Magma è disponibile a <a href="http://magma.maths.usyd.edu.au/calc/">http://magma.maths.usyd.edu.au/calc/</a> .</em>
+
+
+ <h2>Soluzione: 216</h2>  
+ 
+
+
+
+
+
+Per andare a trovare i flessi di una curva, la ricetta è molto semplice. Si considera la matrice Hessiana $H(F)=(\frac{\partial F}{\partial x_i\partial x_j})_{i,j}$, e si interseca il suo determinante $D$ con $F$. 
+Nel nostro caso, l'equazione di $D$ è
+\[
+D=-54x_0^5x_2 + 270x_0^2x_1^2x_2^2 - 54x_0x_1^5 - 54x_1x_2^5
+\]
+Il teorema di Bézout su $\CC$ ci assicura che
+\[
+Fl(X)=V(F,D) \subset \PP^2
+\]
+è composto da 24 punti, contati con opportuna molteplicità.
+<p></p>
+Ovviamente la risposta precedente può cambiare (per difetto) non appena si considerano campi non algebricamente chiusi. 
+Se si considerano come campi $\QQ$ e $\QQ(\zeta_5)$, osserviamo che esistono solamente 3 possibili soluzioni, i.e. $(0:0:1),(0:1:0),(0:0:1)$. Invece prendendo $\QQ(\zeta_7)$ riusciamo a trovare tutte le 24 soluzioni, ovvero (con $z$ che denota una radice primitiva settima dell'unità)
+\[
+(0 : 0 : 1), (z + 1 : z^4 + z^3 + z^2 + z : 1), (z^2 + 1 : -z^5 - z^3 - 1 :
+    1), (z^2 + z : -z^5 - z^4 - z^3 : 1), (z^3 + 1 : -z^4 - z - 1 : 1)\]\[ (z^3 + z
+: -z^5 - z^3 - z : 1), (z^3 + z^2 : -z^3 - z^2 - z : 1), (-z^4 - z^3 - z^2 - z -
+    1 : -z^4 - z^3 - z^2 : 1),\]\[ (z^4 + 1 : z^5 + z^4 + z^2 + z : 1), (z^4 + z :
+    z^4 + z^3 + z + 1 : 1), (z^4 + z^2 : z^5 + z^4 + z^2 + 1 : 1), (z^4 + z^3 :z^5 + z^4 + z^3 + z^2 : 1), \]\[(-z^5 - z^4 - z^3 - z^2 - z : -z^2 - z - 1 :1),(-z^5 - z^4 - z^3 - z^2 - 1 : -z^5 - z^2 - 1 : 1), (-z^5 - z^4 - z^3 - z - 1 :
+    z^5 + z^4 + z + 1 : 1), \]\[(-z^5 - z^4 - z^2 - z - 1 : -z^5 - z^2 - z : 1),
+(-z^5 - z^3 - z^2 - z - 1 : z^5 + z^3 + z + 1 : 1), \]\[(z^5 + 1 : -z^4 - z^2 - 1 :
+1), (z^5 + z : -z^5 - z^4 - z : 1), (1
+: 0 : 0)\]\[ (z^5 + z^2 : -z^4 - z^3 - 1 : 1), (z^5 + z^3
+: z^5 + z^3 + z^2 + 1 : 1), (z^5 + z^4 : z^3 + z^2 + z + 1 : 1), (0 : 1 : 0)\]
+
+Il numero cercato è dunque $P=3 \cdot 3 \cdot 24=216$.
+<p></p>
+Ovviamente non abbiamo cercato tale soluzioni a mano, ma usato un software di calcolo come suggerito. Ecco per esempio il codice MAGMA (che può essere adattato agli altri casi):
+<pre><code>
+    n := 7;
+    Qa<a> := PolynomialRing(Rationals());
+    f := CyclotomicPolynomial(n);
+    Fi<z> := SplittingField(f);
+    DefiningPolynomial(Fi);
+    R<x_0,x_1, x_2>:=PolynomialRing(Fi,3);
+    F:=x_0^3*x_1+x_1^3*x_2+x_2^3*x_0;
+    C:=Scheme(Proj(R),F);
+    HessianMatrix(C);
+    D:=Determinant(HessianMatrix(C));
+    Flex:=Scheme(Proj(R), [F,D]);
+    Flex;
+    Degree(Flex);
+    Flex(Fi);
+    Points(Flex,Fi);
+    </code></pre>
+
+La quartica in questione si chiama <em>quartica di Klein</em>, è nota per le sue simmetrie e proprietà. In particolare, ha il più alto numero di automorfismi possibile per una quartica piana (168, realizzati dal gruppo $PSL(2, \mathbb{F}_7)$).
+
+
+
+
+
+
+    <div class="link-container">
+        <a href="problema_24.html" class="solution-link">🔙 Torna al giorno  24</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

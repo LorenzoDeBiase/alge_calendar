@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 5</h1>
+ <h2>Testo</h2>  
+
+ Consideriamo una curva piana liscia $C \subset \PP^2$, e denotiamo con $g(C)$ il suo genere. È ben noto come per una curva piana liscia proiettiva non tutti i generi siano ammissibili. Determinare la somma dei primi tre valori non ammissibili per $g(C)$. 
+
+
+ <h2>Soluzione: 11 </h2>  
+ 
+
+
+ 
+ 
+ Basta usare la nota formula grado - genere. Se $C$ è una curva liscia piana di grado $d\geq 2$, il suo genere è dato dalla formula
+ \[
+ g(C)= {d-1 \choose 2}.
+ \]
+ 
+ Ci sono vari modi per dimostrare (o quantomeno convincersi) di questa formula. Se consideriamo il genere da un punto di vista topologico, possiamo pensare alla nostra curva liscia come a una superficie (in effetti complessa) compatta e orientata. Avremo allora \[
+ e(C)=2-2g(C).
+ \]
+ Come calcoliamo allora la caratteristica di Eulero? Un modo è usare la cosiddetta formula di Riemann-Hurwitz, per superfici di Riemann compatte (le curve piane non singolari rientrano in questa categoria). Per un rivestimento (ramificato) di grado $d$
+ \[
+ \pi: C \to C'
+ \]
+ abbiamo
+ \[
+ e(C)=d(C')- \sum_{p \in C'} (e_P-1)
+ \]
+ dove $e_P$ è l'indice di ramificazione (uguale a zero ovunque tranne in un numero finito di punti).
+ Se assumiamo che $C=V(x_0^d+x_1^d+x_2^d) \subset \PP^2$ possiamo allora considerare la proiezione ovvia verso $\PP^1$ (per esempio sulle ultime due coordinate), che è una mappa regolare una volta ristretta a $C$.
+ 
+ Questa è un rivestimento di grado $d$ della retta proiettiva, ramificata in $d$ punti (soluzioni di $x_1^d+x_2^d=0$), con indice di ramificazione $e_p=d$. Abbiamo dunque
+ \[
+ e(C)=d(3-d)
+ \]
+ da cui si ricava la formula grado-genere di cui sopra. Si procede poi con un argomento "per deformazione", sapendo il fatto (non banale!) che il genere della curva non cambi per qualsiasi polinomio di grado $d$ si scelga in maniera tale da non avere singolarità.
+ 
+ Ovviamente se $d=1$ abbiamo semplicemente una retta in $\PP^2$, ovvero $\PP^1$, con genere 0. La stessa cosa avviene prendendo $d=2$. In effetti, ci ricordiamo che l'immagine della seconda applicazione di Veronese
+ \[
+ \varphi_2: \PP(V_2) \longrightarrow \PP(\Sym^2 V_2) = \PP^2
+ \]
+ data da
+ \[
+ [x_0:x_1] \mapsto [x_0^2: x_0x_1: x_1^2]=[u:v:w]
+ \]
+ è data da $C=V(F) \subset \PP^2$, con
+ \[
+ F=uw-v^2.
+ \]
+ $C$ è dunque una conica piana liscia, ovvero la sua forma quadratica associata ha rango massimo. D'altra parte, ci ricordiamo dall'algebra lineare che una qualsiasi forma quadratica su $\CC$ è classificata solamente dal rango. Dunque ogni conica piana liscia può essere portata tramite proiettività in $C$.
+ 
+ 
+ Al variare di $d$, $g(C)=\{0,1,3,6 \ldots \}$. 
+ I primi tre valori non ammissibili sono dunque $2,4,5$, e si ha $2+4+5=11$.
+ 
+
+
+    <div class="link-container">
+        <a href="problema_5.html" class="solution-link">🔙 Torna al giorno 5</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 14 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 14</h1>
+
+
+    Acciuffate la chiave corretta e la serratura della vostra cella si apre con un cigolio sinistro.
+<p></p>
+    Per vostra fortuna non c'è nessuna guardia a sentire; anzi a dirla tutta sembra non esserci nessuno in tutto l'intricato labirinto che compone la galera in cui siete stati richiusi.
+    <p></p>
+    
+    Già ma da chi? Forse proprio dall'Organizzazione. Chissà che vogliono da voi.
+ 
+    <p></p>
+
+    No, pensate, non è voi che vogliono, ma il povero Iski, che non avrà tutti i rotori del cervello al posto giusto ma vi è sembrato sincero. A tratti.
+    
+    Dovete cercare di liberarlo e per prima cosa dovete trovare dove è rinchiuso.
+    <p></p>
+    
+    La galera in cui vi trovate sembra essere quozientata con chissà quali foschi ideali e sembra che ancora una volta dobbiate usare l'atlante di tutti i luoghi e i non luoghi per cavarne un Iski dal buco. A quale pagina dovete andare stavolta per orientarvi?
+
+
+    <p></p>
+
+    
+    
+    Consideriamo $X=V(f) \subset \PP^3$ una ipersuperficie quartica liscia, e il seguente anello graduato associato a $X$:
+    \[
+    R_f := \CC[x_0, \ldots, x_3] /J_f
+    \]
+    con 
+    \[
+    J_f=\left(\frac{\partial f}{\partial x_0}, \ldots, \frac{\partial f}{\partial x_3}\right).
+    \]
+    Dopo aver dimostrato che sotto queste ipotesi $R_f$ è finito dimensionale come spazio vettoriale, si denoti con $\sigma$
+    
+    \[
+    \sigma := \textrm{max }  \{ d \ | \ (R_f)_d \neq 0 \},
+    \]
+    dove $(R_f)_d$ denota la componente graduata di $R_f$ di grado $d$.
+    Calcolare 
+    \[
+    D:= \sigma \cdot \dim (R_f)_{\sigma-1}
+    \]
+    
+    
+    [Suggerimento: si può usare il fatto (non banale!) che $\sigma$ e le dimensioni delle varie componenti graduate di $R_f$ sono indipendenti dalla scelta di $f$, purché la corrispondente $X$ sia liscia.]
+    
+    
+    
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_14.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 32; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

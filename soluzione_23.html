@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/math-env.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno  23</h1>
+ <h2>Testo</h2>  
+
+
+
+
+ Sia $\FF_3 = \ZZ / 3\ZZ$ il campo con $3$ elementi.
+ Sia $\FF_3[x]$ l'anello dei polinomi a coefficienti in $\FF_3$ nell'indeterminata $x$.
+ Si determini il numero dei polinomi irriducibili e monici in $\FF_3[x]$ di grado $12$.
+
+
+
+
+ 
+ <h2>Soluzione:  44220</h2>  
+ 
+
+
+
+
+Sia $\NN^+$ l'insieme degli interi $\geq 1$. 
+
+<div class="theorem"> <b>[Formula di inversione di Möbius]</b> <p></p>
+
+ Sia $\mu \colon \NN^+ \to \ZZ$ la funzione di Möbius, cioè la funzione cosí definita
+ \[
+ \mu(n) = \begin{cases}
+     1 &\quad \text{se } n=1, \\
+     (-1)^r &\quad \text{se } n \text{ è il prodotto di $r$ primi distinti}, \\
+     0 &\quad \text{se } n \text{ è divisibile per il quadrato di un primo}.
+ \end{cases}
+ \]
+ Se $f \colon \NN^+ \to \ZZ$ e $g \colon \NN^+ \to \ZZ$ sono due funzioni tali che
+ \begin{equation} \label{eq:moebius1}
+         g(n) = \sum_{d \vert n} f(d) \quad \text{per ogni } n \in \NN^+,
+ \end{equation}
+ allora
+ \begin{equation} \label{eq:moebius2}
+         f(n) = \sum_{d \vert n} \mu(d) g(n/d) \quad \text{per ogni } n \in \NN^+.
+ \end{equation}
+</div>
+
+<div class="proof">
+ Sia $A$ l'insieme delle funzioni $\NN^+ \to \ZZ$.
+ Su $A$ consideriamo l'operazione binaria $+$ data nel modo ovvio: per ogni $f,g \in A$, $f+g$ è la funzione $n \mapsto f(n) + g(n)$.
+ Potremmo considerare l'operazione binaria $\cdot$ data in modo analogo come il prodotto, ma non lo facciamo.
+ Consideriamo invece l'operazione binaria $*$, detta \emph{prodotto di convoluzione}, cosí definita: per ogni $f, g \in A$, $f * g$ è la funzione
+ $\NN^+ \to \ZZ$ data da
+ \[
+ f*g \colon n \mapsto \sum_{d \in \NN^+ \text{ t.c.\ } d | n} f(d)  g (n/d).
+ \]
+ Si può verificare che $(A,+,*)$ è un anello commutativo con identità. L'identità moltiplicativa è la funzione $\epsi$ data da
+ \[
+ \epsi(n) = \begin{cases}
+     1 &\text{ se } n=0, \\
+     0 &\text{ se } n\geq 1.
+ \end{cases}
+ \]
+ 
+ Consideriamo la funzione $\phiv_1 \in A$ che vale costantemente $1$. Verifichiamo l'uguaglianza
+ \begin{equation} \label{eq:moebius3}
+ \mu * \phiv_1 = \epsi.
+ \end{equation}
+ Dobbiamo verificare che $(\mu * \phiv_1)(n) = \epsi(n)$ per ogni $n \in \NN^+$. Se $n=1$ è ovvio. Suppongo $n \geq 2$. Allora scriviamo $n = p_1^{\al_1} \cdots p_s^{\al_s}$ con $s\geq 1$, $\al_1, \dots, \al_s \in \NN^+$ e $p_1, \dots, p_s$ primi distinti. Poiché $\mu$ si annulla sui numeri che non sono square-free si ha
+ \[
+ (\mu * \phiv_1)(n) = \sum_{d \vert n} \mu(d) =  \sum_{\emptyset \subseteq I \subseteq \{1,\dots, s \}} \mu \left( \prod_{i \in I} p_i \right) = \sum_{\emptyset \subseteq I \subseteq \{1,\dots, s \}} (-1)^{|I|} = 0.
+ \]
+ 
+L'uguaglianza~\eqref{eq:moebius1} dice $g = f * \phiv_1$. Perciò usando le proprietà del prodotto di convoluzione e l'uguaglianza~\eqref{eq:moebius3}, si ottiene $f = f * \epsi = f * \phiv_1 * \mu = g * \mu$ che è \eqref{eq:moebius2}.
+<div class="qed">∎</div>
+</div>
+
+
+
+<div class="theorem">
+Sia $q$ la potenza di un primo, sia $\FF_q$ il campo con $q$ elementi. Per ogni $n \in \NN^+$, sia $S_n(\FF_q)$ l'insieme dei polinomi irriducibili e monici in $\FF_q[x]$ di grado $n$.
+Allora, per ogni $n \in \NN^+$
+\[
+\# S_n(\FF_q) = \frac{1}{n} \sum_{d \vert n} \mu(d) q^{\frac{n}{d}}.
+\]
+</div>>
+
+In particolare, $\# S_{12}(\FF_q) = \frac{1}{12}(q^{12} - q^6 - q^4 + q^2)$. Perciò
+\[
+\# S_{12}(\FF_3) = \frac{1}{12}(3^{12} - 3^6 - 3^4 + 3^2) = 44220.
+\]
+
+<div class="proof">
+ Per ogni $n \in \NN^+$, $x^{q^n} - x$ è il prodotto di tutti i polinomi monici e irridcibili di $\FF_q[x]$ il cui grado divide $n$.
+ Prendendo i gradi si ottiene
+ \begin{equation} \label{eq:formula_irr}
+     q^n = \sum_{d | n} d \cdot \# S_d(\FF_q) \quad \text{ per ogni } n \in \NN^+.
+ \end{equation}
+ 
+ Si considerino le funzioni $f,g \colon \NN^+ \to \ZZ$ date da $f(n) = q^n$ per ogni $n \in \NN^+$ e $f(d) = d \cdot \# S_d(\FF_q)$. Allora \eqref{eq:formula_irr} è \eqref{eq:moebius1}. Per la formula di inversione di Möbius si conclude.
+ <div class="qed">∎</div>
+</div>
+
+
+
+
+
+}
+
+
+
+
+    <div class="link-container">
+        <a href="problema_23.html" class="solution-link">🔙 Torna al giorno 23 </a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione 25</title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+        .hodge-diamond {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* bordo a rombo */
+    .hodge-diamond::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 6px solid gold;
+      transform: rotate(45deg);
+      animation: pulse 2s infinite alternate;
+      border-radius: 8px; /* angoli leggermente arrotondati */
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 8px gold; }
+      100% { box-shadow: 0 0 24px gold; }
+    }
+
+    .hodge-content {
+      position: relative;
+      z-index: 2;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 25</h1>
+ <h2>Testo</h2>  
+
+
+ Calcolare i numeri di Hodge $h^{p,q}(X)$ di una ipersuperficie quintica liscia $X$ nello spazio proiettivo 4 dimensionale $\PP^4$, e sommate solamente quelli con $p+q$ dispari.
+ <p></p>
+ <em>Suggerimento: derivate! </em>
+
+
+ <h2>Soluzione: 204</h2>  
+ 
+
+
+
+
+
+
+
+
+
+
+Una quintica di dimensione 3 è un esempio di una varietà di tipo Calabi-Yau, ed è un oggetto estremamente studiato in geometria algebrica, differenziale, fisica delle alte energie e quant'altro.
+<p></p>
+Per quanto riguarda i numeri di Hodge, sappiamo che $h^{p,q}(X):= \dim H^{p,q}(X)$, con $\bigoplus_{p+q=k}H^{p,q}(X) \cong H^k(X,\CC)$. Dobbiamo dunque studiare i gruppi di coomologia con $k$ dispari.
+<p></p>
+Ci viene in aiuto il famoso <em>teorema della sezione iperpiana di Lefschetz</em>. Un suo corollario dice che, se $X$ è un'ipersuperficie liscia di dimensione $n$ nello spazio proiettivo, allora la mappa di restrizione
+\[
+\phi: H^k(\PP^{n+1}, \ZZ) \to H^k(X, \ZZ)
+\]
+è un isomorfismo per $k \le n$, e iniettiva per $k=n$. Per dualità di Poincaré si ha inoltre che un tale isomorfismo vale anche per $k>n$. Una tale mappa è un morfismo di strutture di Hodge quando andiamo a tensorizzare l'anello di coomologia per il campo dei numeri complessi.
+<p></p>
+Ricordandoci che
+\[
+H^* (\PP^{n+1}, \ZZ) \cong \ZZ[h]/h^{n+2}
+\]
+con $deg(h)=2$, si ha che
+\[
+H^1(X, \ZZ)= H^5(X, \ZZ)=0
+\]
+mentre 
+\[
+H^0(X, \ZZ)\cong H^2(X,\ZZ)\cong H^4(X,\ZZ)\cong H^6(X,\ZZ) \cong \ZZ.
+\]
+
+A questo punto, potremmp risolvere l'esercizio andando semplicemente a calcolarci la caratteristica di Eulero di $X$ (per esempio, usando Gauss-Bonnett) e ricordandoci che la somma alterna dei numeri di Hodge ci dà proprio la caratteristica di Eulero.
+<p></p>
+Proponiamo qui un altro metodo, basato sull' <em>anello Jacobiano</em> già introdotto in un esercizio precedente.
+<p></p>
+Uno dei teoremi più profondi e utili della geometria algebrica ci dice che, se $X=V(f)$ è un'ipersuperficie liscia proiettiva di grado $d$ in $\PP^{n+1}$ con $n+1$ pari, allora 
+<p></p>
+$$h^{p, n-p}(X)= [R_f]_{(p+1)d-n-2}.$$
+<p></p>
+(Se $n+1$ è dispari, il teorema ammette è vero a meno di sostituire la cooomologia con la sua parte primitiva. Non ci preoccuperemo di questo ora, però).
+<p></p>
+Nel nostro caso, si ha $d=5= n+2$. Dunque $h^{0,3}(X)=h^{3,0}(X)=1$, dove si può usare direttamente la dualità con lo zoccolo (che in questo caso coincide con la dualità di Hodge $h^{p,q}(X)=h^{q,p}(X)$.
+<p></p> 
+Questo poteva essere anche ottenuto con la <em>formula di aggiunzione </em>, che ci dice che il canonico $K_X$ è triviale.
+<p></p>
+Rimane dunque solo da calcolare $h^{1,2}(X)=h^{2,1}(X)$. Per questo, ci ricordiamo dall'esercizio precedente che possiamo prendere una qualsiasi $f$ purché il risultato sia liscio: per esempio, la quintica di Fermat:
+
+\[
+f=x_0^5+ \ldots + x_4^5
+\]
+
+Dobbiamo dunque andare a calcolare la componente di grado 5 di $R_f$. Per questo, contiamo prima quanti monomi di grado 5 in 5 variabli abbiamo. Questi sono dati da 
+\[
+{5+5-1 \choose 5-1}={9 \choose 4}=126.
+\]
+A questo dobbiamo togliere quelli che sono nell'ideale generato da $x_i^4$ per tutti gli $i$. In altre parole, $x_i \otimes V_5^{\vee}$.
+<p></p>
+Ne segue dunque che:
+\[
+h^{1,2}(X) = \dim [R_f]_5= 126- 25=101.
+\]
+Il numero cercato è dunque
+\[
+2\cdot (101+1)=204.
+\]
+
+Possiamo rappresentare graficamente il diamante di Hodge di una tale threefold di Calabi-Yau:
+
+
+
+\[\begin{matrix}
+&&&&&&&1 &&&&&&&\\
+&&&&&&0&&0&&&&&&\\
+&&&&&0 &&1&&0&&&&&\\
+&&&& 1 && 101 && 101 &&1&&&& \\
+&&&&&0 &&1&&0&&&&&\\
+&&&&&&0&&0&&&&&&\\
+&&&&&&&1 &&&&&&&
+\end{matrix}\]
+
+<p></p>
+
+<div class="hodge-diamond">
+    <div class="hodge-content">
+      \[
+      \begin{matrix}
+      &&&&&&&1 &&&&&&&\\
+      &&&&&&0&&0&&&&&&\\
+      &&&&&0 &&1&&0&&&&&\\
+      &&&& 1 && 101 && 101 &&1&&&& \\
+      &&&&&0 &&1&&0&&&&&\\
+      &&&&&&0&&0&&&&&&\\
+      &&&&&&&1 &&&&&&&
+      \end{matrix}
+      \]
+    </div>
+  </div>
+
+<p></p>
+
+    <div class="link-container">
+        <a href="problema_25.html" class="solution-link">🔙 Torna al giorno 25</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

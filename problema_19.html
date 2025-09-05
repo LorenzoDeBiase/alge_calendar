@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno  19</title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 19 </h1>
+
+
+    "WOW! Io non ci sarei mai arrivato alla soluzione! Grazie!"" dice l'oste riconoscente per l'aiuto che gli avete dato.
+<p></p>
+
+    "Ora dicci dove trovare il rifugio incognito dell'Organizzazione!" intima Iski con vocetta minacciosa.
+    <p></p>
+    
+    "Purtroppo una mappa che, seguita in maniera razionale, conduca all'covo dell'Organizzazione  non esiste..."dice MORtificato l'oste "ed io non ci sono mai stato di persona."  
+    <p></p>
+    Mentre Iski si avvicina per afferrare l'oste per il bavero, quest'ultimo si affretta ad aggiungere:
+    
+    "P-però posso dirvi che si trova nella foresta randomica!'"
+    <p></p>
+    "Ah grazie, bell'aiuto!" risponde Iski sarcastico "come se il luogo in cui si trova la foresta randomica non cambiasse casualmente all'alba di un nuovo giorno! Come facciamo a sapere in quale quadrante si troverà domani?"
+    
+    
+    "A-ah ma questo si può sapere in due modi!  Uno è risolvere l'esercizio di oggi del 
+  
+    Probability Calendar e l'altro è invece risolvere questo:
+
+    <p></p>
+    
+    Si consideri la Grassmanniana $G=\Gr(2, V_5)$, immersa tramite Plücker, e l'anello omogeneo delle coordinate associato $R_G$, considerato come anello graduato $R_G \cong \bigoplus_{d \geq 0}[R_G]_d$.
+    <p></p>
+     Determinare \[
+    D:= \dim [R_G]_2.
+    \]
+    
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_19.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 50; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluzione 1 🎄</title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 1</h1>
+ <h2>Testo</h2>  
+
+ Sia     \(\mathbb{F}_5 = \mathbb{Z} / 5 \mathbb{Z}  \ \)  il campo con \(5\) elementi, dato dalle classi resto degli interi modulo \(5\). Siano \(0,1,2,3,4\) gli elementi di \(\mathbb{F}_5\).
+ Sia \(S \subseteq (\mathbb{F}_5)^3 \) l'insieme costituito dalle terne \((x,y,z) \in (\mathbb{F}_5)^3 \) che soddisfano le seguenti equazioni:
+ \[
+ \left\{
+ \begin{array}{l}
+     2x + 3 y + z = 1 \\
+     x + 4y + 4z = 2 \\
+     3x + 2 y + 3z = 0
+ \end{array}
+ \right.
+ \]
+ Si determini la cardinalità dell'insieme \(S\).
+
+
+
+
+ <h2>Soluzione: 5 </h2>  
+    Usiamo il metodo dell'eliminazione gaussiana con le mosse elementari sulle righe. Usiamo la forma matriciale del sistema lineare sopra:
+    \[
+    \begin{pmatrix}
+            \begin{array}{ccc|c}
+            2 & 3 & 1 & 1 \\
+            1 & 4 & 4 & 2 \\
+            3 & 2 & 3 & 0
+        \end{array}
+    \end{pmatrix}.
+    \]
+    Alla seconda riga tolgo \(3=2^{-1}\) volte la prima riga:
+            \[
+    \begin{pmatrix}
+        \begin{array}{ccc|c}
+            2 & 3 & 1 & 1 \\
+            0 & 0 & 1 & 4 \\
+            3 & 2 & 3 & 0
+        \end{array}
+    \end{pmatrix}.
+    \]
+            Alla terza riga tolgo \(\frac{3}{2} = 4 \) volte la prima riga, ovvero alla terza riga aggiungo la prima riga:
+    \[
+    \begin{pmatrix}
+        \begin{array}{ccc|c}
+            2 & 3 & 1 & 1 \\
+            0 & 0 & 1 & 4 \\
+            0 & 0 & 4 & 1
+        \end{array}
+    \end{pmatrix}.
+    \]
+    Nella prima colonna ora abbiamo un elemento diverso da zero nella prima riga e sotto di lui tutti zero: lui è il primo pivot.
+    <p></p>
+    Analizziamo la seconda colonna soltanto nella seconda e terza riga: non c'è niente da fare perché è zero.
+    <p></p>
+    Allora ci spostiamo nella terza colonna e l'analizziamo nella seconda e terza riga. L'elemento di posto \( (2,3) \) è il secondo pivot. Voglio mettere zero sotto di lui. Alla terza riga sommo la seconda riga:
+            \[
+    \begin{pmatrix}
+        \begin{array}{ccc|c}
+            2 & 3 & 1 & 1 \\
+            0 & 0 & 1 & 4 \\
+            0 & 0 & 0 & 0
+        \end{array}
+    \end{pmatrix}.
+    \]
+    Il sistema è a scala! Adesso possiamo facilmente risolverlo a ritroso.
+    <p></p>
+    Abbiamo visto che \(S \subseteq (\mathbb{F}_5)^3\) è l'insieme delle soluzioni del sistema lineare
+            \[
+    \left\{
+    \begin{array}{l}
+        2x + 3 y + z = 1 \\
+        z = 4
+    \end{array}
+    \right.
+    \]
+Quindi ovviamente \(z=4 \). Nella colonna di \(y\)non ci sono pivot, quindi \(y\) è uguale a un parametro libero. Dalla prima equazione si evince
+\[
+2x = -3y -z + 1 = 2y+4z+1
+\]
+cioè
+\[
+x = y + 2z + 3 = y + 2 \cdot 4 + 3 = y+1.
+\]
+Quindi
+\[
+S = \left\{ \left. \begin{pmatrix}
+    t+1 \\ t \\ 4
+\end{pmatrix} \in (\mathbb{F}_5)^3 \ \right\vert \ t \in \mathbb{F}_5  \right\}
+\]
+ha cardinalità 5.
+
+
+    <div class="link-container">
+        <a href="problema_1.html" class="solution-link">🔙 Torna al problema 1</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

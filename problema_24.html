@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 24 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 24 </h1>
+
+
+    Pronunciate lentamente la soluzione all'orecchio del folletto. Al suono della vostra voce il suo corpo sembra calmarsi.
+
+<p></p>
+    Ma notate che il colbacco non smette di emanare la sua luce malevola, mentre un sorriso sinistro appare sul volto del folletto.
+    <p></p>  
+    
+    Domandate ad Iski come si sente.
+    <p></p>
+    
+    Una voce rauca giunge dalla sua bocca: 
+    
+    "Non chiamarmi più con quello stupido nome. Io ora sono $ \mathrm{Iski}^*$, o Star Iski per gli amici. Ma tu non sei tale ed ora assaggerai di che pasta sono fatto."
+    <p></p> 
+    
+    Il panico si impossessa di voi. Non potete combattere Iski, non ci riuscireste.
+    
+    <p></p>
+    Avete solo una possibilità. Cercare di farlo tornare quello che era prima che il colbacco lo trasformasse non canonicamente nel suo duale. 
+    <p></p>
+    
+    Vi guardate attorno in cerca di oggetti che possano tornarvi utili.
+    L'occhio vi cade subito sull'enorme specchio della sala e sapete con certezza cosa dovete fare.
+    <p></p>
+    
+    Con un gomito lo colpite con violenza, prendete una dei frammenti più grandi.
+    Se Iski riuscirà a vedere la sua immagine dall'altra parte, la simmetria a specchio lo farà tornare certamente in sé.
+    <p></p>  
+    
+    Ma nell'avvicinarvi ad Iski sentite che il colbacco rosso cerca di prendere il controllo da lontano anche su di voi.
+    <p></p>
+    
+    Dovete risolvere il seguente esercizio, o il cappello si impossesserà di voi e sarà la fine.
+   
+    <p></p>
+    
+    
+    
+    
+    Si consideri $X=V(F) \subset \PP(\KK^3)$ con
+    \[
+    F=x_0^3x_1+x_1^3x_2+x_2^3x_0;
+    \]
+    Si consideri il numero di flessi $f_{\KK}$ di $X$, ovvero i punti $p \in X$ che annullano il determinante dell'Hessiana di $F$ con coordinate in $\PP(\KK^3)$.
+    <p></p>
+    Siano ora
+    \[
+    \KK_1:= \QQ; \ \KK_2:= \QQ(\zeta_5); \ \KK_3:=  \QQ(\zeta_7);
+    \]
+    
+    dove con $\QQ(\zeta_n)$ si denota l'n-esimo campo ciclotomico. Determinare
+    \[
+    P:= \prod_{i=1}^3 f_{\KK_i}.
+    \]
+    
+    <em>Suggerimento: può essere conveniente usare un software di computer algebra. Per esempio, una versione online di Magma è disponibile a <a href="http://magma.maths.usyd.edu.au/calc/">http://magma.maths.usyd.edu.au/calc/</a> .</em>
+    
+    
+    
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_24.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 216; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

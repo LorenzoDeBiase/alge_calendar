@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Giorno 13 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 2px solid #b22222;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #b22222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8b0000;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        #result {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giorno 13 </h1>
+
+
+Vi risvegliate in un celletta umida stesi su un giaciglio di pietra e con un mal di testa fortissimo.
+
+Date un'occhiata a tutto quello che vi circonda.
+<p></p>
+Reticoli di ragnatele cospargono lo stanzino umido dal mobilio quasi inesistente in cui siete imprigionati.
+Una scrivania di pietra senza alcuna sedia su cui poter stare e un urinale puzzolente.
+<p></p>
+Vi avvicinate alla sbarre della cella ispezionandole con cura.
+
+Anche in  questo posto stramboide in cui trovate, chissà quanto lontani da casa, i meccanismi delle serrature funzionano in  maniera simile a quelle che conoscete.
+<p></p>
+Sulla parete di fronte alla vostra cella ci sono numerose chiavi numerate appese, impossibili da raggiungere dalle braccia di un folletto, ma raggiungibili dalle vostre. 
+<p></p> Quale sarà quella giusta? L'iscrizione sopra le chiavi può aiutarvi.
+<p></p>
+
+Sia $V= \CC^4$, e si consideri $W$ lo spazio vettoriale di tutte le forme quadratiche su $V$, e il proiettivo associato $\PP(W)$. In altre parole, $\PP(W)$ parametrizza tutte le quadriche in $\PP(V)=\PP^3$.
+ 
+Sia ora $l \subset \PP^3$ una retta fissata. 
+
+Consideriamo
+
+\[
+H=\{ Q \in W \ | \ l \subset V(Q) \}
+\]
+
+ $H \subset \PP(W)$ è un sottospazio proiettivo, i.e. $H \cong \PP^c$. Determinare la dimensione di $H$.
+ 
+ <p></p>
+ 
+[Suggerimento: La risposta non cambia a seconda della retta usata. Per esempio, si può prendere la retta $x_0=x_1=0$]
+
+
+
+
+    <form id="answer-form">
+        <label for="answer">🎄 Inserisci la tua risposta:</label>
+        <input type="number" id="answer" name="answer" required>
+        <button type="button" onclick="checkAnswer()">🎅 Verifica</button>
+    </form>
+
+    <p id="result" style="margin-top: 10px;"></p>
+
+    <div class="link-container">
+        <a href="soluzione_13.html" class="solution-link">🎁 Vai alla soluzione</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const correctAnswer = 6; 
+            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "🎉 Risposta corretta!";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "❌ Risposta errata. Riprova.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

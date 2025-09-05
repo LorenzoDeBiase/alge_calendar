@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 8</h1>
+ <h2>Testo</h2>  
+
+
+ Si consideri la conica piana $C \subset \PP^2$, $C= V(\frac{x_0^2}{2}+ 2x_1^2-\frac{x_2^2}{2})$. Ricordiamo che la retta tangente $l_p$ a $C=V(f)$ in $p$ è data da $$l_p= V\left(\frac{\partial f}{\partial x_0}(p)x_0 +\frac{\partial f}{\partial x_1}(p)x_1+ \frac{\partial f}{\partial x_2}(p)x_2\right)\subset \PP^2.$$
+ Definiamo un morfismo \[
+ \phi: C \to (\PP^2)^{\vee}, \ \ \phi(p) \mapsto l_p.
+ \]
+ Si denoti con $C^{\vee}= \phi(C)$. Si può far vedere che $C^{\vee}$ è anch'essa una curva piana, i.e. $C^{\vee}= V(f^{\vee})$. Si consideri $a_{i,d}$, definito come il coefficiente del monomio $x_i^d$ in $f^{\vee}$. Si determini
+ \[D= \prod_{i=0}^2 a_{i,d},\]
+ con la normalizzazione $a_{0,d}=2$.
+
+ 
+
+ <h2>Soluzione: -2 </h2>  
+ 
+
+
+ 
+ 
+ La curva $C^{\vee}$ è la cosiddetta \emph{curva duale} di $C$. In generale, per $C$ liscia di grado $d$, ha grado $d(d-1)$. Dunque in particolare, se $C$ è una conica, lo è anche $C^{\vee}$. Più concretamente, la mappa $\phi$ è definita in coordinate omogenee come
+ \[
+ \phi([x_0, x_1, x_2])=[x_0, 4x_1, -x_2].
+ \]
+ Chiamiamo $[u, v, w]$ queste ultime tre. Sappiamo a priori che devono soddisfare una relazione algebrica (per ragioni di dimensione). Poiché l'anello omogeneo delle coordinate di $C$ è $\CC[x_0, x_1, x_2]/ (f)$, vogliamo provare a ottenere una relazione (necessariamente almeno quadratica) del tipo
+ \[
+ r_d(u,v,w)=  f\cdot g
+ \]
+ Per esempio, prendendo $[a,b,c] \in \PP^2$, possiamo cercare una relazione del tipo $$au^2 + bv^2+ cw^2= \lambda \left(\frac{x_0^2}{2}+ 2x_1^2-\frac{x_2^2}{2}\right).$$ 
+ per cui basta prendere $[a,b,c]=[\lambda/2, \lambda/8, -\lambda/2].$
+ Con la normalizzazione cercata si ha dunque che $D= 2 \cdot \frac{1}{2} \cdot -2= -2.$
+ In tal caso si poteva notare che la matrice simmetrica $B$ associata alla conica $C^{\vee}$ è $B=A^{-1}$, con $A$ la matrice associata a $C$, e $D$ è semplicemente il determinante di $B$.
+ 
+
+
+
+    <div class="link-container">
+        <a href="problema_8.html" class="solution-link">🔙 Torna al giorno 8</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 7</h1>
+ <h2>Testo</h2>  
+
+ Se $k$ è un campo, $V$ un $k$-spazio vettoriale di dimensione finita e $r$ è un numero intero non-negativo, allora la <em>Grassmanniana</em> degli $r$-piani di $V$ è l'insieme dei sottospazi vettoriali di $V$ di dimensione $r$ e si denota con $\mathrm{Gr}(r,V)$.
+
+
+ <p></p>
+  Si calcoli la cardinalità dell'insieme $\mathrm{Gr}(3,V)$ quando $k = \FF_7$ è il campo con $7$ elementi e $V = (\FF_7)^5$ è lo spazio vettoriale standard su $\FF_7$ di dimensione $5$.
+
+
+
+ <h2>Soluzione: 140050 </h2>  
+
+
+
+	
+
+<p></p>
+
+
+ 
+ Lavoriamo in generale con un campo $k$, lo spazio vettoriale $k^n$ e i suoi sottospazi vettoriali di dimensione $r$. Evitando casi banali, supponiamo $1 \leq r \leq n$.
+ Consideriamo l'insieme $W$ delle matrici $n \times r$ a coefficienti in $k$ e di rango $r$.
+ <p></p>
+ Possiamo considerare la funzione
+ \[
+ \pi \colon W \longrightarrow \mathrm{Gr}(r,k^n)
+ \]
+ che associa a ogni matrice $A \in W$ il sottospazio vettoriale di $k^n$ generato dalle colonne di $A$, cioè $\pi(A)$ è l'immagine dell'applicazione lineare $L_A \colon k^r \to k^n$ associata alla matrice $A$.
+ 
+<p></p>
+ È facile verificare che, per ogni $A, A' \in W$ vale
+ \[
+ \pi(A) = \pi(A') \quad \Leftrightarrow \quad \exists C \in \mathrm{GL}_r(k) \text{ tale che } A' = AC.
+ \]
+ Infatti, due matrici $A, A' \in W$ hanno le stessa immagine tramite $\pi$ se e solo se le colonne di $A$ generano lo stesso sottospazio vettoriale generato dalle colonne di $A'$, e questo avviene se e solo se le colonne di $A$ e le colonne di $A'$ formano due basi dello sottospazio vettoriale di $k^n$. La matrice $C$ sopra è la matrice di cambiamento di base tra queste due basi.
+ 
+ È ovvio che $\pi$ è suriettiva. Quindi questo dice che $\mathrm{Gr}(r,k^n)$ è in bigezione con il quoziente $W / \mathrm{GL}_r(k)$ dell'azione del gruppo $\mathrm{GL}_r(k)$ su $W$ tramite moltiplicazione a destra.
+ 
+<p></p>
+ Inoltre è chiaro che la matrice $C$ nell'enunciato sopra, se esiste, è unica. Quindi l'azione di $\mathrm{GL}_r(k)$ su $W$ è libera, cioè ogni elemento di $W$ ha stabilizzatore banale.
+ Perciò tutte le orbite hanno cardinalità uguale a quella di $\mathrm{GL}_r(k)$.
+ Noi siamo interessate alla cardinalità dell'insieme delle orbite di quest'azione.
+ 
+<p></p>
+ Supponiamo che il campo $k$ sia finito con $q$ elementi. Allora
+ \[
+ | \mathrm{Gr}(r,k^n) | = \frac{|W|}{|\mathrm{GL}_r(k)|}.
+ \]
+ Determiniamo, intanto, la cardinalità di $W$: dobbiamo capire come possiamo costruire una matrice $n \times r$ di rango $r$, cioè che abbia $r$ colonne linearmente indipendenti. Basta quindi scegliere dei vettori $v_1, \dots, v_r \in k^n$ tali che
+ \[
+ \{ 0 \} \subsetneqq \mathrm{Span}(v_1) \subsetneqq \mathrm{Span}(v_1, v_2) \subsetneqq \cdots \subsetneqq \mathrm{Span}(v_1, \dots, v_r).
+ \]
+ Per $v_1$ abbiamo $q^n-1$ scelte (basta richiedere che sia non nullo). Per $v_2$ dobbiamo richiedere che non stia in $\mathrm{Span}(v_1)$, quindi abbiamo $q^n - q$ scelte.
+ Per $v_3$ dobbiamo richiedere che non stia in $\mathrm{Span}(v_1, v_2)$, quindi abbiamo $q^n - q^2$. In conclusione
+ \[
+ |W| = (q^n-1)(q^n-q)\cdots(q^n - q^{r-1}) = \prod_{i=1}^r (q^n - q^{i-1}).
+ \]
+ Per determinare la cardinalità di $\mathrm{GL}_r(k)$ si segue un procedimento analogo perché si devono scegliere $r$ vettori linearmente indipendenti in $k^r$, quindi
+ \[
+ |\mathrm{GL}_r(k)| = (q^r-1)(q^r-q)\cdots(q^r - q^{r-1}) = \prod_{i=1}^r (q^r - q^{i-1}).
+ \]
+ Perciò
+ \[
+ | \mathrm{Gr}(r,k^n)| = \prod_{i=1}^r \frac{q^n - q^{i-1}}{q^r - q^{i-1}}.
+ \]
+ Nel caso richiesto dall'esercizio si prende $q=7$, $r=3$ e $n=5$ e quindi
+ \[
+ | \mathrm{Gr}(3,(\FF_7)^5)| = \prod_{i=1}^3 \frac{7^5 - 7^{i-1}}{7^3 - 7^{i-1}} = 140050.
+ \]
+
+ 
+
+
+    <div class="link-container">
+        <a href="problema_7.html" class="solution-link">🔙 Torna al giorno 7</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

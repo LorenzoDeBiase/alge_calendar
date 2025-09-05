@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 13</h1>
+ <h2>Testo</h2>  
+
+
+
+
+ Sia $V= \CC^4$, e si consideri $W$ lo spazio vettoriale di tutte le forme quadratiche su $V$, e il proiettivo associato $\PP(W)$. In altre parole, $\PP(W)$ parametrizza tutte le quadriche in $\PP(V)=\PP^3$.
+ 
+ Sia ora $l \subset \PP^3$ una retta fissata. 
+ 
+ Consideriamo
+ 
+ \[
+ H=\{ Q \in W \ | \ l \subset V(Q) \}
+ \]
+ 
+  $H \subset \PP(W)$ è un sottospazio proiettivo, i.e. $H \cong \PP^c$. Determinare la dimensione di $H$.
+  
+  <p></p>
+  
+ [Suggerimento: La risposta non cambia a seconda della retta usata. Per esempio, si può prendere la retta $x_0=x_1=0$]
+ 
+ <h2>Soluzione: 6 </h2>  
+ 
+
+
+ Per prima cosa notiamo il seguente isomorfismo $W\cong \CC[x_0, \ldots, x_3]_2$. Dunque $W$ ha dimensione 10, e lo spazio proiettivo di riferimento è dunque un $\PP^9$. Sia ora $l \subset \PP^3$. Una qualsiasi retta spaziale è data dall'annullarsi di due forme lineari, i.e.
+ \[
+ l=V(h_1(x_0, \ldots, x_3),h_1(x_0, \ldots, x_3)) \subset \PP^3
+ \]
+ Assumiamo per semplicità che la retta sia quella data nell'esempio.
+ Perché $l \subset V(Q)$, avremo che la nostra quadrica non dovrà contenere $x_2^2, x_3^2, x_2x_3$ e loro combinazioni lineari.
+ 
+ Infatti
+ \[
+ Q|_l= Q(0,0, x_2, x_3)= ax_2^2+bx_3^2+cx_2x_3.
+ \]
+ 
+ 
+ 
+  In altre parole, il sottospazio $H$ definito dall'annullamento di $Q$ su $l$ è dato dagli zeri di tre condizioni lineari indipendenti proiettive nei coefficienti, e ha dunque dimensione 6. 
+ 
+ Si poteva anche ragionare scrivendo 
+ \[
+ Q= h_1 q' +h_2 q''
+ \]
+ con $q, q'$ forme lineari. Anche qui, si arriva facilmente al conto di 6 parametri, notando come si debbano scegliere due forme lineari non multiple tra di loro.
+ 
+ 
+
+
+
+    <div class="link-container">
+        <a href="problema_13.html" class="solution-link">🔙 Torna al giorno 13 </a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

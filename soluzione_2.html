@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione 2 </title>
+  <!-- Configurazione di MathJax -->
+  <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 2</h1>
+ <h2>Testo</h2>  
+
+ Sia $C \subset \RR^2$ la conica definita dall'equazione
+ \[
+ x^2 + y^2 -2x-2y-23 = 0.
+ \]
+ Si consideri il punto $p = (4,5) \in \RR^2$. Si verifica facilmente che $p$ sta su $C$.
+ Sia $\ell$ la retta tangente a $C$ in $p$.
+ Siano $a,b \in \RR$ tali che $ax +by - 32 = 0$ è un'equazione di $\ell$.
+ Si determini $a+b$.
+
+ <h2>Soluzione: 7 </h2>  
+ 
+
+Un modo di riscrivere l'equazione di $C$ è
+\[
+(x-1)^2 + (y-1)^2 = 5^2.
+\]
+Quindi $C$ è la circonferenza di centro $q = (1,1)$ e raggio $5$.
+
+Il coefficiente angolare della retta che passa per $p$ e per $q$ è
+\[
+\frac{5-1}{4-1} = \frac{4}{3}.
+\]
+Poiché $\ell$ è perpendicolare alla retta che passa per $p$ e per $q$, il coefficiente angolare  di $\ell$ è
+$- \frac{3}{4}$. Ora imponiamo il passaggio per il punto $p$ e otteniamo che un'equazione di $\ell$ è
+\[
+y - 5 = - \frac{3}{4} (x-4),
+\]
+ovvero
+\[
+3x +4y - 32 = 0.
+\]
+Quindi il risultato voluto è $3+4 = 7$.
+
+
+
+    <div class="link-container">
+        <a href="problema_2.html" class="solution-link">🔙 Torna al giorno 2 </a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>

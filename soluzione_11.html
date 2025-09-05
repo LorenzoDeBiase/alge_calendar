@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlGe Calendar - Soluzione </title>
+   <script src="mathjax-config.js"></script>
+  <script async id="MathJax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+        h1 {
+            color: black; /* Titolo nero */
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soluzione giorno 11</h1>
+ <h2>Testo</h2>  
+
+
+ Consideriamo il gruppo $\textrm{PGL}_2(\CC)$, e la sua azione naturale $\PP(\CC[x_0, x_1]_3)$ tramite cambi di coordinate lineari. Determinare il numero $c$ di orbite non banali per tale azione.
+ Chiamiamo inoltre <em>orbita minimale</em> l'orbita di dimensione minore.
+ <p></p>
+ Dopo aver dimostrato che l'orbita minimale è unica ed è una sottovarietà di $\PP(\CC[x_0, x_1]_3)$, determinarne la dimensione $n$ e il grado $d$. Calcolare dunque $c\cdot n \cdot d$.
+ 
+ <h2>Soluzione: 9 </h2>  
+
+
+
+
+ Per prima cosa, determiniamo il numero di orbite in $\PP(\CC[x_0, x_1]_3) \cong \PP^3$. Notiamo che possiamo fattorizzare un polinomio omogeneo di grado 3 in 2 variabili come
+ \[
+ (\lambda_1 x_0 - \lambda_0 x_1)(\mu_1x_0 - \mu_0 x_1)(\nu_1x_0 - \nu_0 x_1) 
+ \]
+ dove $(\lambda_0: \lambda_1), (\mu_0:\mu_1), (\nu_0 : \nu_1)$ sono i suoi zeri in $\PP^1$. Due polinomi di grado $3$ di questa forma apparterranno alla stessa $\mathrm{PGL}_2(\CC )$-orbita per l'azione data se e solo se i loro zeri possono essere portati dall'uno altro tramite un cambio di coordinate determinato dall'azione di un elemento di $\mathrm{PGL}_2 (\CC )$. Dunque ci sono precisamente tre orbite non banali: polinomi con uno zero triplo, con due radici distinte, con tre radici distinte.
+ <p></p>
+ Nell'ultimo caso, abbiamo un'orbita aperta (il generico polinomio di grado 3 avrà infatti tre radici distinte), la seconda orbita sarà descritta da una (in effetti singola) condizione in termine del descriminante.
+<p></p> 
+ L'orbita minimale descrive i polinomi con uno zero triplo, ovvero della forma 
+ 
+ 
+ \[
+ (\lambda_1 x_0 - \lambda_0 x_1)^3 
+ \]
+ 
+ Questo insieme è per definizione proiettivamente equivalente alla cubica gobba, che sappiamo avere dimensione 1 e grado 3. Il risultato finale è dunque $3 \cdot 3=9$.
+  
+
+
+    <div class="link-container">
+        <a href="problema_11.html" class="solution-link">🔙 Torna al giorno 11</a>
+        <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+    </div>
+</body>
+</html>
