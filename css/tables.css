@@ -1,0 +1,16 @@
+/* Stile generale per tutte le tabelle */
+table {
+    margin: 1em auto;          /* margine e centratura */
+    border-collapse: collapse; /* bordi uniti */
+  }
+  
+  th, td {
+    border: 1px solid black;   /* bordo celle */
+    padding: 6px 12px;         /* spaziatura interna */
+    text-align: center;        /* centratura testo */
+  }
+  
+  th {
+    background-color: #f0f0f0; /* sfondo intestazioni */
+  }
+  

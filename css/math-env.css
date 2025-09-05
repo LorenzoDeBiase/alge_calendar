@@ -1,0 +1,73 @@
+/* Stili per ambienti matematici (theorem, proof, definition, example...) */
+
+.theorem, .lemma, .proposition, .corollary,
+.definition, .example, .remark, .proof {
+  padding: 0.8em 1em;
+  margin: 1.2em 0;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.theorem::before, .lemma::before, .proposition::before, 
+.corollary::before, .definition::before, .example::before,
+.remark::before, .proof::before {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+/* Specifici */
+.theorem {
+  background: #f0f8ff;
+  border-color: #3b82f6;
+}
+.theorem::before { content: "Teorema."; color: #1e40af; }
+
+.lemma {
+  background: #fdf2f8;
+  border-color: #db2777;
+}
+.lemma::before { content: "Lemma."; color: #9d174d; }
+
+.proposition {
+  background: #faf5ff;
+  border-color: #7c3aed;
+}
+.proposition::before { content: "Proposizione."; color: #5b21b6; }
+
+.corollary {
+  background: #fefce8;
+  border-color: #ca8a04;
+}
+.corollary::before { content: "Corollario."; color: #854d0e; }
+
+.definition {
+  background: #ecfdf5;
+  border-color: #10b981;
+}
+.definition::before { content: "Definizione."; color: #065f46; }
+
+.example {
+  background: #fff7ed;
+  border-color: #f97316;
+}
+.example::before { content: "Esempio."; color: #7c2d12; }
+
+.remark {
+  background: #f9fafb;
+  border-color: #6b7280;
+}
+.remark::before { content: "Osservazione."; color: #374151; }
+
+.proof {
+  background: #f9fffa;
+  border-color: #10b981;
+  font-style: italic;
+}
+.proof::before { content: "Dimostrazione."; color: #065f46; font-style: normal; }
+
+/* QED box */
+.qed {
+  text-align: right;
+  font-weight: bold;
+  font-style: normal;
+}
