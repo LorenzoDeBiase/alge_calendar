@@ -39,37 +39,93 @@
             margin: 20px auto;
             max-width: 200px;
         }
-        .hodge-diamond {
+            /* rombo dorato */
+    .hodge-diamond {
       position: relative;
-      width: 300px;
-      height: 300px;
+      width: 280px;
+      height: 280px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    /* bordo a rombo */
     .hodge-diamond::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       border: 6px solid gold;
       transform: rotate(45deg);
+      border-radius: 10px;
       animation: pulse 2s infinite alternate;
-      border-radius: 8px; /* angoli leggermente arrotondati */
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 8px gold; }
-      100% { box-shadow: 0 0 24px gold; }
+      background: transparent; /* niente sfondo */
     }
 
     .hodge-content {
       position: relative;
       z-index: 2;
-      font-size: 0.9rem;
       text-align: center;
+      font-size: 0.9rem;
+      background: transparent;
     }
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 8px gold; }
+      100% { box-shadow: 0 0 28px gold; }
+    }
+    /* wrapper che occupa tutta la larghezza e centra orizzontalmente */
+.diamond-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centra orizzontalmente */
+  align-items: center;     /* centra verticalmente se serve */
+  clear: both;             /* evita interferenze con float */
+  margin: 80px 0;          /* spazio sopra e sotto */
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* rombo (mantieni le tue dimensioni) */
+.hodge-diamond {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;               /* il wrapper si occupa della centratura */
+}
+
+/* bordo rombo pulsante */
+.hodge-diamond::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 6px solid gold;
+  transform: rotate(45deg);
+  border-radius: 10px;
+  animation: pulse 2s infinite alternate;
+  background: transparent;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* contenuto che non occupa tutta la larghezza */
+.hodge-content {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  display: inline-block;   /* IMPORTANT: evita che il contenuto diventi full-width */
+  background: transparent;
+  padding: 6px;
+}
+.diamond-link {
+  text-decoration: none; /* niente sottolineatura */
+}
+
+.diamond-link:hover .hodge-diamond::before {
+  border-color: orange; /* cambia colore bordo al passaggio */
+  box-shadow: 0 0 40px orange;
+}
     </style>
 </head>
 <body>
@@ -155,35 +211,27 @@ Il numero cercato è dunque
 Possiamo rappresentare graficamente il diamante di Hodge di una tale threefold di Calabi-Yau:
 
 
-
-\[\begin{matrix}
-&&&&&&&1 &&&&&&&\\
-&&&&&&0&&0&&&&&&\\
-&&&&&0 &&1&&0&&&&&\\
-&&&& 1 && 101 && 101 &&1&&&& \\
-&&&&&0 &&1&&0&&&&&\\
-&&&&&&0&&0&&&&&&\\
-&&&&&&&1 &&&&&&&
-\end{matrix}\]
-
-<p></p>
-
-<div class="hodge-diamond">
-    <div class="hodge-content">
-      \[
-      \begin{matrix}
-      &&&&&&&1 &&&&&&&\\
-      &&&&&&0&&0&&&&&&\\
-      &&&&&0 &&1&&0&&&&&\\
-      &&&& 1 && 101 && 101 &&1&&&& \\
-      &&&&&0 &&1&&0&&&&&\\
-      &&&&&&0&&0&&&&&&\\
-      &&&&&&&1 &&&&&&&
-      \end{matrix}
-      \]
+<div class="diamond-wrapper">
+  <a href="finale.html" class="diamond-link">
+    <div class="hodge-diamond">
+      <div class="hodge-content">
+        \[
+        \begin{matrix}
+        &&&&&&&1 &&&&&&&\\
+        &&&&&&0&&0&&&&&&\\
+        &&&&&0 &&1&&0&&&&&\\
+        &&&& 1 && 101 && 101 &&1&&&& \\
+        &&&&&0 &&1&&0&&&&&\\
+        &&&&&&0&&0&&&&&&\\
+        &&&&&&&1 &&&&&&&
+        \end{matrix}
+        \]
+      </div>
     </div>
-  </div>
+  </a>
+</div>
 
+Seleziona il diamante per posizionarlo sull'albero!
 <p></p>
 
     <div class="link-container">

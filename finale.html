@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Buone feste!</title>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: white; /* Sfondo bianco */
+            color: black; /* Testo nero */
+        }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: darkgreen;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    /* contenitore centrale */
+    .tree-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 80px;
+      position: relative;
+    }
+
+    /* rombo dorato con diamante */
+    .hodge-diamond {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px; /* lo avvicino alla cima dell'albero */
+    }
+    .hodge-diamond::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 5px solid gold;
+      transform: rotate(45deg);
+      border-radius: 10px;
+      animation: pulse 2s infinite alternate;
+      background: transparent;
+    }
+    .hodge-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      font-size: 0.8rem;
+      background: transparent;
+    }
+
+    /* albero */
+    .tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tree-row {
+      display: flex;
+      justify-content: center;
+      margin: 5px 0;
+    }
+
+    .ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 8px;
+  animation: pulseBall 2s infinite alternate;
+  position: relative;
+  /* ombre più morbide e meno intense */
+  box-shadow: inset -3px -3px 6px rgba(0,0,0,0.15), 
+              inset 3px 3px 6px rgba(255,255,255,0.25),
+              0 0 5px rgba(0,0,0,0.3);
+}
+
+/* riflesso meno evidente */
+.ball::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.5); /* meno bianco */
+  border-radius: 50%;
+  filter: blur(3px); /* più sfumato */
+}
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 8px gold; }
+      100% { box-shadow: 0 0 28px gold; }
+    }
+    @keyframes pulseBall {
+      0%   { transform: scale(1); opacity: 0.9; }
+      100% { transform: scale(1.2); opacity: 1; }
+    }
+
+    /* tronco */
+    .trunk {
+      width: 60px;
+      height: 70px;
+      background: sienna;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    /* neve con numeri */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      font-size: 18px;
+      color: rgba(0,0,0,0.3);
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+
+    /* bottone home */
+    .link-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .solution-link {
+            margin: 0 10px;
+            color: #b22222;
+            text-decoration: none;
+        }
+        .solution-link:hover {
+            text-decoration: underline;
+        }
+        .christmas-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+  </style>
+</head>
+<body>
+
+<h1>Finale</h1>
+    
+  Una luce calda si sparge dalla cima del puntale di Hodge andando a rivestire tutta la Autopiazza.
+
+  Sentite che state per tornare a casa trasportati dalla connessione al vostro mondo, mentre scambiate un ultimo sorriso di intesa con Iski.
+  
+ <p></p>
+  Tutto il vortice di festività intorno a voi profuma di sere d'infanzia trascorse ad aspettare il Natale e a mangiare i cioccolatini di un calendario dell'avvento.
+  
+
+
+  <p></p>
+  <div class="tree-wrapper">
+
+    <!-- diamante di Hodge come stellina -->
+    <div class="hodge-diamond">
+      <div class="hodge-content">
+        \[
+        \begin{matrix}
+        &&&&&1&&&&&\\
+        &&&&0&&0&&&&\\
+        &&&0&&1&&0&&&\\
+        &&1&&101&&101&&1&&\\
+        &&&0&&1&&0&&&\\
+        &&&&0&&0&&&&\\
+        &&&&&1&&&&&
+        \end{matrix}
+        \]
+      </div>
+    </div>
+
+    <!-- albero di Natale -->
+    <div class="tree" id="tree"></div>
+    <div class="trunk"></div>
+  </div>
+
+  <h1>Buone feste!</h1>
+
+  <div class="link-container">
+    <a href="problema_25.html" class="solution-link">🔙 Torna al giorno 25</a>
+    <a href="index.html" class="solution-link">🏠 Ritorna alla home</a>
+</div>
+<p></p>
+  <script>
+    // 🎨 colori palline
+    const colors = ["red", "green", "blue", "gold", "purple", "orange", "pink", "teal"];
+    const tree = document.getElementById("tree");
+
+    // costruisci albero con righe crescenti di palline
+    let rows = 7; // altezza albero
+    for (let i = 1; i <= rows; i++) {
+      let row = document.createElement("div");
+      row.className = "tree-row";
+      for (let j = 0; j < i; j++) {
+        let ball = document.createElement("div");
+        ball.className = "ball";
+        ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+        row.appendChild(ball);
+      }
+      tree.appendChild(row);
+    }
+
+    // neve di numeri
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.className = "snowflake";
+      snowflake.textContent = Math.floor(Math.random() * 10); // numeri 0-9
+      snowflake.style.left = Math.random() * window.innerWidth + "px";
+      snowflake.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      snowflake.style.fontSize = (Math.random() * 20 + 14) + "px";
+      document.body.appendChild(snowflake);
+      setTimeout(() => snowflake.remove(), 10000);
+    }
+    setInterval(createSnowflake, 300);
+  </script>
+
+</body>
+</html>
