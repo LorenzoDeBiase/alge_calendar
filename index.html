@@ -2,8 +2,10 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Calendario dell'Avvento</title>
+  <title>AlGe Calendar</title>
   <style>
+
+
 body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -79,7 +81,17 @@ body {
       0%, 100% { box-shadow: 0 0 6px rgba(255,255,255,0.2); }
       50% { box-shadow: 0 0 18px rgba(255,255,255,0.8); }
     }
+    .visitor-counter {
+  font-size: 0.8em;     /* testo più piccolo */
+  text-align: left;      /* allineato a sinistra */
+  margin-top: 5cm;      /* spazio rispetto al contenuto sopra */
+  white-space: nowrap;    /* tutto sulla stessa riga */
+  line-height: 1.2em;
+}
 
+.visitor-counter a {
+  font-size: 0.8em;
+}
     /* Tronco */
     .trunk {
       width: 100px;
@@ -97,10 +109,10 @@ body {
         Questa è la versione interattiva dell'<a href="https://sites.google.com/view/enricofatighenti/alge-calendar">Alge Calendar</a>, il calendario dell'avvento di geometria algebrica (e dintorni). Ogni giorno un nuovo esercizio, e la soluzione dell'esercizio del giorno precedente. Il tutto condito da una storia natalizia a tema più o meno matematico. 
         <p></p>Ogni esercizio avrà come soluzione un numero intero! Gli esercizi sono pensati per essere di difficoltà (vagamente) crescente.
     <h2>🎄- When</h2>  
-        Dal 1 al 25 Dicembre (come ogni calendario dell'avvento che si rispetti). Ogni giorno a mezzanotte si sblocca una pallina nuova. In altri periodi dell'anno, potreste trovarle tutte bloccate o già sbloccate.
+        Dal 1 al 25 Dicembre (come ogni calendario dell'avvento che si rispetti). Ogni giorno alle ore 9:00 (CET) si sblocca una pallina nuova. Le palline resteranno sbloccate fino al primo Maggio.
     <h2>🎄- Who</h2>   
     
-        Se si intende chi può partecipare, sono tutti benvenuti/e. Idealmente gli studenti di Matematica dal terzo anno in su avranno più strumenti a disposizione, ma alcuni esercizi saranno alla portata di tutti gli anni. 
+        Se si intende chi può partecipare, sono tutti benvenuti/e. Idealmente gli studenti di Matematica dal terzo anno in su avranno più strumenti a disposizione, ma alcuni(i primi) esercizi saranno alla portata di chiunque abbia seguito un corso di Geometria o Algebra Lienare. 
         <p></p>Se invece si intende chi ha creato questa roba, la matematica è a cura di <a href="https://sites.google.com/view/enricofatighenti/home">Enrico Fatighenti</a> e <a href="https://www.dm.unibo.it/~andrea.petracci3/">Andrea Petracci</a>, il Natale è a cura di <a href="https://sites.google.com/view/lorenzodebiase/home">Lorenzo De Biase</a>.
         <h2>🎄- Where </h2>   
     Liberamente su questo sito. Per il momento non abbiamo ancora implementato un modo per registrare quante risposte corrette avete già inserito.
@@ -111,55 +123,100 @@ body {
     
         <p></p>
 
-        Seleziona una pallina dall'albero:
-    
+        <div>
+          Seleziona una pallina dall'albero:
+      </div>
+      
+      <div class="calendar-container">
+          <div class="tree" id="tree"></div>
+          <div class="trunk"></div>
+      </div>
+      
+      <script>
 
-  <div class="calendar-container">
-    <div class="tree" id="tree"></div>
-    <div class="trunk"></div>
-  </div>
+ 
+        //const now = new Date(2025, 11, 13, 7, 30);
+        const now = new Date(); 
+      
+  
+        let cycleYear;
+      
+        if (now.getMonth() === 11) {
+          // Dicembre: ciclo dell'anno corrente
+          cycleYear = now.getFullYear();
+        } else if (now.getMonth() <= 2) {
+          // Gennaio-Febbraio-Marzo: ciclo iniziato a dicembre dell'anno precedente
+          cycleYear = now.getFullYear() - 1;
+        } else {
+          // Aprile → Novembre: prossimo ciclo è dicembre dell'anno corrente
+          cycleYear = now.getFullYear();
+        }
+      
 
-  <script>
-    const tree = document.getElementById("tree");
-    let day = 1;
+        function unlockDateForDay(d) {
+          return new Date(cycleYear, 11, d, 8, 0, 0); // dicembre, ore 08:00
+        }
+      
+        // Data di chiusura: 31 marzo
+        const closeDate = new Date(cycleYear + 1, 2, 31, 23, 59, 59);
+      
+        const tree = document.getElementById("tree");
+        let day = 1;
+      
+        const rows = [1, 2, 3, 4, 5, 6, 4];
+      
+        const colors = [
+          ["#e63946", "#a31a22"], ["#2a9d8f", "#1b6d65"], ["#f4a261", "#e76f51"],
+          ["#457b9d", "#1d3557"], ["#ffb703", "#fb8500"], ["#8ecae6", "#219ebc"],
+          ["#9d4edd", "#5a189a"], ["#06d6a0", "#118ab2"], ["#ef476f", "#d62828"],
+          ["#ff6d00", "#e65100"], ["#90be6d", "#588157"], ["#f72585", "#7209b7"],
+          ["#118ab2", "#073b4c"], ["#e9c46a", "#f4a261"], ["#2b9348", "#007f5f"],
+          ["#ff0054", "#d81159"], ["#48cae4", "#0096c7"], ["#f77f00", "#d62828"],
+          ["#8338ec", "#3a0ca3"], ["#06d6a0", "#118ab2"], ["#ffafcc", "#cdb4db"],
+          ["#a8dadc", "#457b9d"], ["#ffbe0b", "#fb5607"], ["#9ef01a", "#38b000"],
+          ["#ff006e", "#8338ec"]
+        ];
+      
+        rows.forEach(count => {
+          const row = document.createElement("div");
+          row.className = "row";
+      
+          for (let i = 0; i < count; i++) {
+            if (day > 25) break;
+      
+            const ornament = document.createElement("a");
+            ornament.className = "ornament";
+            ornament.textContent = day;
+      
+            const [c1, c2] = colors[day - 1];
+            ornament.style.background = `radial-gradient(circle at top left, ${c1}, ${c2})`;
+      
+            const u = unlockDateForDay(day);
+      
+            if (now >= u && now <= closeDate) {
+              ornament.href = `problema_${day}.html`;
+            } else {
+              ornament.href = "#";
+              ornament.style.opacity = 0.4;
+              ornament.style.pointerEvents = "none";
+            }
+      
+            row.appendChild(ornament);
+            day++;
+          }
+      
+          tree.appendChild(row);
+        });
+      
+      </script>
 
-    // Struttura dell'albero (quanti giorni per riga)
-    const rows = [1, 2, 3, 4, 5, 6, 4]; // Totale 25
-
-    // Tavolozza di 25 colori diversi (gradiente fisso)
-    const colors = [
-      ["#e63946", "#a31a22"], ["#2a9d8f", "#1b6d65"], ["#f4a261", "#e76f51"],
-      ["#457b9d", "#1d3557"], ["#ffb703", "#fb8500"], ["#8ecae6", "#219ebc"],
-      ["#9d4edd", "#5a189a"], ["#06d6a0", "#118ab2"], ["#ef476f", "#d62828"],
-      ["#ff6d00", "#e65100"], ["#90be6d", "#588157"], ["#f72585", "#7209b7"],
-      ["#118ab2", "#073b4c"], ["#e9c46a", "#f4a261"], ["#2b9348", "#007f5f"],
-      ["#ff0054", "#d81159"], ["#48cae4", "#0096c7"], ["#f77f00", "#d62828"],
-      ["#8338ec", "#3a0ca3"], ["#06d6a0", "#118ab2"], ["#ffafcc", "#cdb4db"],
-      ["#a8dadc", "#457b9d"], ["#ffbe0b", "#fb5607"], ["#9ef01a", "#38b000"],
-      ["#ff006e", "#8338ec"]
-    ];
-
-    rows.forEach(count => {
-      const row = document.createElement("div");
-      row.className = "row";
-
-      for (let i = 0; i < count; i++) {
-        if (day > 25) break;
-
-        const ornament = document.createElement("a");
-        ornament.className = "ornament";
-        ornament.href = `problema_${day}.html`;
-        ornament.textContent = day;
-
-        const [c1, c2] = colors[day - 1];
-        ornament.style.background = `radial-gradient(circle at top left, ${c1}, ${c2})`;
-
-        row.appendChild(ornament);
-        day++;
-      }
-
-      tree.appendChild(row);
-    });
-  </script>
+<div class="visitor-counter">
+  Dall'ultimo aggiornamento (22 Novembre 2025) il numero di visite alla Home sono state: 
+  <a href="https://www.free-counters.org/" target="_blank">https://www.free-counters.org/</a> 
+  <span id="counter-container">
+    <script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=c494d31baeb2d633b6ae3ee0ce55c9c3a3aff8f7"></script>
+    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1445925/t/3"></script>
+  </span>
+</div>
 </body>
 </html>
