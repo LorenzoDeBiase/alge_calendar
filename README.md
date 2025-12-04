@@ -1,4 +1,4 @@
-# AlGe -Calendar
+# AlGe - Calendar
 
 ## 🎄- What
 
@@ -28,7 +28,7 @@ Se invece si intende chi ha creato questa roba, la matematica è a cura di Enric
 
 Liberamente su questo sito. Per il momento non abbiamo ancora implementato un modo per registrare quante risposte corrette avete già inserito.
 
-🎄- Why
+## 🎄- Why
 
 
 Per divertirsi (e magari imparare qualcosa). Questo calendario NON è una gara, NON è una competizione, NON premia la più rapida, il più furbo o quant'altro. La collaborazione è estremamente incoraggiata.
